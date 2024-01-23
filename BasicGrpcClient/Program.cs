@@ -9,7 +9,7 @@ var name = Console.ReadLine();
 Console.WriteLine($"Hello {name}. You can start chatting now.");
 Console.WriteLine("Type 'exit' to stop at any time.");
 
-using var channel = GrpcChannel.ForAddress("https://127.0.0.1:7100");
+using var channel = GrpcChannel.ForAddress("http://127.0.0.1:5100");
 var client = new Chatbot.ChatbotClient(channel);
 
 while (true)
@@ -36,9 +36,19 @@ while (true)
 
     Console.WriteLine($"Reply from bytes: {messageBytes}");
 
-    var payloadString = JsonSerializer.Serialize(reply.Payload);
+    Console.WriteLine($"Answer Type: {reply.AnswerType}");
+    Console.WriteLine($"Response type: {reply.ResponseType}");
+    Console.WriteLine($"Unknown request: {reply.UnknownRequest}");
 
-    Console.WriteLine($"Payload: {payloadString}");
+    Console.WriteLine("Older Message:");
+    foreach(var entry in reply.MessageHistory)
+    {
+        Console.WriteLine($"Key: {entry.Key}, {entry.Value.RequestMessage}, {entry.Value.ResponseMessage}");
+    }
+
+    //var payloadString = JsonSerializer.Serialize(reply.Payload);
+
+    //Console.WriteLine($"Payload: {payloadString}");
 }
 
 Console.ReadKey();

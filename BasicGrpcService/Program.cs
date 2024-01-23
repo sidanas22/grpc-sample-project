@@ -1,9 +1,11 @@
+using BasicGrpcService;
 using BasicGrpcService.Services;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddGrpc();
+builder.Services.AddSingleton<IChatHistoryStore, ChatHistoryStore>();
 
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole();
