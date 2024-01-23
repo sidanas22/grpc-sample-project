@@ -15,11 +15,11 @@ public class ChatbotService : Chatbot.ChatbotBase
         _historyStore = historyStore;
     }
 
-    public override Task<ChatReply> SendMessage(ChatRequest request, ServerCallContext context)
+    public override Task<Response.ChatReply> SendMessage(ChatRequest request, ServerCallContext context)
     {
         _logger.LogDebug("Message received from the client {Peer}.", context.Peer);
 
-        var reply = new ChatReply();
+        var reply = new Response.ChatReply();
 
         if (request.Message.ToLower().Contains("hello"))
         {
