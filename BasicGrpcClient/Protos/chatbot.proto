@@ -5,6 +5,7 @@ option csharp_namespace = "BasicGrpcService";
 import "google/protobuf/wrappers.proto";
 import "google/protobuf/duration.proto";
 import "google/protobuf/timestamp.proto";
+import "google/protobuf/any.proto";
 
 package basic_grpc_service;
 
@@ -26,6 +27,7 @@ message ChatReply {
   google.protobuf.DoubleValue message_size_in_megabytes = 5;
   google.protobuf.Timestamp request_received_time = 6;
   google.protobuf.Duration request_processed_duration = 7;
+  google.protobuf.Any dynamic_payload = 8;
 }
 
 

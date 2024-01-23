@@ -2,6 +2,7 @@ using BasicGrpcService;
 using Google.Protobuf.WellKnownTypes;
 using Grpc.Net.Client;
 using System.Text;
+using System.Text.Json;
 
 Console.WriteLine("What is your name?");
 var name = Console.ReadLine();
@@ -40,6 +41,8 @@ while (true)
     Console.WriteLine($"Message size in megabytes: {reply.MessageSizeInMegabytes}");
     Console.WriteLine($"Request received time: {reply.RequestReceivedTime}");
     Console.WriteLine($"Request processed duration: {reply.RequestProcessedDuration}");
+    Console.WriteLine($"Raw dynamic payload: {JsonSerializer.Serialize(reply.DynamicPayload)}");
+    Console.WriteLine($"Unpacked dynamic payload: {JsonSerializer.Serialize(reply.DynamicPayload.Unpack<ChatRequest>())}");
 
     /*
      // Commented for demonstrating well-known types

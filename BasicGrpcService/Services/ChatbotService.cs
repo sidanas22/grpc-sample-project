@@ -58,6 +58,7 @@ public class ChatbotService : Chatbot.ChatbotBase
         reply.MessageSizeInMegabytes = (double)reply.MessageSizeInBytes / (1024 * 1024);
         reply.RequestReceivedTime = Timestamp.FromDateTime(DateTime.UtcNow);
         reply.RequestProcessedDuration = reply.RequestReceivedTime - request.RequestStartTime;
+        reply.DynamicPayload = Any.Pack(request);
 
 
         //foreach (var entry in _historyStore.GetHistory())
