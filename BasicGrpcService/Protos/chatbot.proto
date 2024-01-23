@@ -2,17 +2,35 @@ syntax = "proto3";
 
 option csharp_namespace = "BasicGrpcService";
 
+import "google/protobuf/wrappers.proto";
+
 package basic_grpc_service;
 
 service Chatbot {
   rpc SendMessage (ChatRequest) returns (ChatReply);
 }
-
+/*
+// commented for demonstrating well-known-types
 message ChatRequest {
   string name = 1;
   string message = 2;
 }
+*/
+message ChatRequest {
+  google.protobuf.StringValue name = 1;
+  google.protobuf.StringValue message = 2;
+}
 
+message ChatReply {
+  google.protobuf.StringValue message = 1;
+  google.protobuf.BoolValue answer_found = 2;
+  google.protobuf.BytesValue reply_in_bytes = 3;
+  google.protobuf.Int32Value message_size_in_bytes = 4;
+  google.protobuf.DoubleValue message_size_in_megabytes = 5;
+}
+
+/*
+// commented for demonstrating well-known-types
 message ChatReply {
   string message = 1;
   bool answer_found = 2;
@@ -28,6 +46,8 @@ message ChatReply {
   
   //repeated NumericPayload payload =4;
 }
+*/
+
 
 // message NumericPayload
 // {

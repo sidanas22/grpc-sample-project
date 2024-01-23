@@ -35,16 +35,23 @@ while (true)
         .GetString(reply.ReplyInBytes.ToByteArray());
 
     Console.WriteLine($"Reply from bytes: {messageBytes}");
+    Console.WriteLine($"Message size in bytes: {reply.MessageSizeInBytes}");
+    Console.WriteLine($"Message size in megabytes: {reply.MessageSizeInMegabytes}");
 
+    /*
+     // Commented for demonstrating well-known types
+    
     Console.WriteLine($"Answer Type: {reply.AnswerType}");
     Console.WriteLine($"Response type: {reply.ResponseType}");
     Console.WriteLine($"Unknown request: {reply.UnknownRequest}");
-
+    
     Console.WriteLine("Older Message:");
     foreach(var entry in reply.MessageHistory)
     {
         Console.WriteLine($"Key: {entry.Key}, {entry.Value.RequestMessage}, {entry.Value.ResponseMessage}");
     }
+
+    */
 
     //var payloadString = JsonSerializer.Serialize(reply.Payload);
 

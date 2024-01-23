@@ -24,7 +24,10 @@ public class ChatbotService : Chatbot.ChatbotBase
         {
             reply.Message = $"Hello {request.Name}!";
             reply.AnswerFound = true;
-            reply.AnswerType = AnswerType.Greeting;
+
+            // commented for demonstrating well-known-types
+            //reply.AnswerType = AnswerType.Greeting;
+
             // commented for demonstrating oneof
             //reply.ResponseType = ChatHistoryEntry.Types.ResponseType.Greeting;
 
@@ -35,27 +38,33 @@ public class ChatbotService : Chatbot.ChatbotBase
             reply.AnswerFound = true;
             // commented for demonstrating oneof
             //reply.AnswerType = AnswerType.Help;
-            reply.ResponseType = ChatHistoryEntry.Types.ResponseType.Assistance;
+
+            // commented for demonstrating well-known-types
+            //reply.ResponseType = ChatHistoryEntry.Types.ResponseType.Assistance;
         }
         else
         {
             reply.Message = "I'm sorry, but I am unable to resolve your query.";
-            reply.UnknownRequest = true;
+            // commented for demonstrating well-known-types
+            //reply.UnknownRequest = true;
         }
 
         reply.ReplyInBytes =
             ByteString.CopyFrom(
                 Encoding.ASCII.GetBytes(reply.Message));
 
+        reply.MessageSizeInBytes = reply.ReplyInBytes.Length;
+        reply.MessageSizeInMegabytes = (double)reply.MessageSizeInBytes / (1024 * 1024);
 
-        foreach (var entry in _historyStore.GetHistory())
-        {
-            reply.MessageHistory[entry.Key] = new ChatHistoryEntry
-            {
-                RequestMessage = entry.Value.Item1,
-                ResponseMessage = entry.Value.Item2,
-            };
-        }
+
+        //foreach (var entry in _historyStore.GetHistory())
+        //{
+        //    reply.MessageHistory[entry.Key] = new ChatHistoryEntry
+        //    {
+        //        RequestMessage = entry.Value.Item1,
+        //        ResponseMessage = entry.Value.Item2,
+        //    };
+        //}
 
         _historyStore.AddEntry(request.Message, reply.Message);
 
