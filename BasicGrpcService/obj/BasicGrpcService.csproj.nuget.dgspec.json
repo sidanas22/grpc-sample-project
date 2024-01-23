@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\muhammad.anas\\Downloads\\educative-code-widget\\educative-code-widget-files\\BasicGrpcService\\BasicGrpcService.csproj": {}
+    "C:\\Users\\muhammad.anas\\Downloads\\grpc-sample-project\\grpc-sample-project\\BasicGrpcService\\BasicGrpcService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\muhammad.anas\\Downloads\\educative-code-widget\\educative-code-widget-files\\BasicGrpcService\\BasicGrpcService.csproj": {
+    "C:\\Users\\muhammad.anas\\Downloads\\grpc-sample-project\\grpc-sample-project\\BasicGrpcService\\BasicGrpcService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\muhammad.anas\\Downloads\\educative-code-widget\\educative-code-widget-files\\BasicGrpcService\\BasicGrpcService.csproj",
+        "projectUniqueName": "C:\\Users\\muhammad.anas\\Downloads\\grpc-sample-project\\grpc-sample-project\\BasicGrpcService\\BasicGrpcService.csproj",
         "projectName": "BasicGrpcService",
-        "projectPath": "C:\\Users\\muhammad.anas\\Downloads\\educative-code-widget\\educative-code-widget-files\\BasicGrpcService\\BasicGrpcService.csproj",
+        "projectPath": "C:\\Users\\muhammad.anas\\Downloads\\grpc-sample-project\\grpc-sample-project\\BasicGrpcService\\BasicGrpcService.csproj",
         "packagesPath": "C:\\Users\\muhammad.anas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\muhammad.anas\\Downloads\\educative-code-widget\\educative-code-widget-files\\BasicGrpcService\\obj\\",
+        "outputPath": "C:\\Users\\muhammad.anas\\Downloads\\grpc-sample-project\\grpc-sample-project\\BasicGrpcService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

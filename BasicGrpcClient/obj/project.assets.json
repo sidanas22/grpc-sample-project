@@ -292,11 +292,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\muhammad.anas\\Downloads\\educative-code-widget\\educative-code-widget-files\\BasicGrpcClient\\BasicGrpcClient.csproj",
+      "projectUniqueName": "c:\\Users\\muhammad.anas\\Downloads\\grpc-sample-project\\grpc-sample-project\\BasicGrpcClient\\BasicGrpcClient.csproj",
       "projectName": "BasicGrpcClient",
-      "projectPath": "C:\\Users\\muhammad.anas\\Downloads\\educative-code-widget\\educative-code-widget-files\\BasicGrpcClient\\BasicGrpcClient.csproj",
+      "projectPath": "c:\\Users\\muhammad.anas\\Downloads\\grpc-sample-project\\grpc-sample-project\\BasicGrpcClient\\BasicGrpcClient.csproj",
       "packagesPath": "C:\\Users\\muhammad.anas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\muhammad.anas\\Downloads\\educative-code-widget\\educative-code-widget-files\\BasicGrpcClient\\obj\\",
+      "outputPath": "c:\\Users\\muhammad.anas\\Downloads\\grpc-sample-project\\grpc-sample-project\\BasicGrpcClient\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

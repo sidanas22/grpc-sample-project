@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "F6dQZD2cb+z4mn7J+mPH1nu+Ks5A9luyPRhpiOkBkZD01zU9hL5rryLhzQZsbrkP7esHhoQGY81gfeEJXYnw9Q==",
+  "dgSpecHash": "lGcxRT4nnjWLq1gyHTfVq8ZKw9Yc2p4n37lSKarGuMC95bdTSrUPFEj80xjnK++MYsvSOXEoClAzIMeX8m+PAQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\muhammad.anas\\Downloads\\educative-code-widget\\educative-code-widget-files\\BasicGrpcClient\\BasicGrpcClient.csproj",
+  "projectFilePath": "C:\\Users\\muhammad.anas\\Downloads\\grpc-sample-project\\grpc-sample-project\\BasicGrpcClient\\BasicGrpcClient.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\muhammad.anas\\.nuget\\packages\\google.protobuf\\3.21.5\\google.protobuf.3.21.5.nupkg.sha512",
     "C:\\Users\\muhammad.anas\\.nuget\\packages\\grpc.core.api\\2.48.0\\grpc.core.api.2.48.0.nupkg.sha512",

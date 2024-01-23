@@ -24,32 +24,53 @@ namespace BasicGrpcService {
     static ChatbotReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRQcm90b3MvY2hhdGJvdC5wcm90bxISYmFzaWNfZ3JwY19zZXJ2aWNlIiwK",
-            "C0NoYXRSZXF1ZXN0EgwKBG5hbWUYASABKAkSDwoHbWVzc2FnZRgCIAEoCSJ/",
-            "CglDaGF0UmVwbHkSDwoHbWVzc2FnZRgBIAEoCRIUCgxhbnN3ZXJfZm91bmQY",
-            "AiABKAgSFgoOcmVwbHlfaW5fYnl0ZXMYAyABKAwSMwoHcGF5bG9hZBgEIAEo",
-            "CzIiLmJhc2ljX2dycGNfc2VydmljZS5OdW1lcmljUGF5bG9hZCKPAgoOTnVt",
-            "ZXJpY1BheWxvYWQSEgoKZmxvYXRfZGVtbxgBIAEoAhITCgtkb3VibGVfZGVt",
-            "bxgCIAEoARISCgppbnQzMl9kZW1vGAMgASgFEhIKCmludDY0X2RlbW8YBCAB",
-            "KAMSEwoLdWludDMyX2RlbW8YBSABKA0SEwoLdWludDY0X2RlbW8YBiABKAQS",
-            "EwoLc2ludDMyX2RlbW8YByABKBESEwoLc2ludDY0X2RlbW8YCCABKBISFAoM",
-            "Zml4ZWQzMl9kZW1vGAkgASgHEhQKDGZpeGVkNjRfZGVtbxgKIAEoBhIVCg1z",
-            "Zml4ZWQzMl9kZW1vGAsgASgPEhUKDXNmaXhlZDY0X2RlbW8YDCABKBAyWAoH",
-            "Q2hhdGJvdBJNCgtTZW5kTWVzc2FnZRIfLmJhc2ljX2dycGNfc2VydmljZS5D",
-            "aGF0UmVxdWVzdBodLmJhc2ljX2dycGNfc2VydmljZS5DaGF0UmVwbHlCE6oC",
-            "EEJhc2ljR3JwY1NlcnZpY2ViBnByb3RvMw=="));
+            "ChRQcm90b3MvY2hhdGJvdC5wcm90bxISYmFzaWNfZ3JwY19zZXJ2aWNlGh5n",
+            "b29nbGUvcHJvdG9idWYvd3JhcHBlcnMucHJvdG8iaAoLQ2hhdFJlcXVlc3QS",
+            "KgoEbmFtZRgBIAEoCzIcLmdvb2dsZS5wcm90b2J1Zi5TdHJpbmdWYWx1ZRIt",
+            "CgdtZXNzYWdlGAIgASgLMhwuZ29vZ2xlLnByb3RvYnVmLlN0cmluZ1ZhbHVl",
+            "Ip4CCglDaGF0UmVwbHkSLQoHbWVzc2FnZRgBIAEoCzIcLmdvb2dsZS5wcm90",
+            "b2J1Zi5TdHJpbmdWYWx1ZRIwCgxhbnN3ZXJfZm91bmQYAiABKAsyGi5nb29n",
+            "bGUucHJvdG9idWYuQm9vbFZhbHVlEjMKDnJlcGx5X2luX2J5dGVzGAMgASgL",
+            "MhsuZ29vZ2xlLnByb3RvYnVmLkJ5dGVzVmFsdWUSOgoVbWVzc2FnZV9zaXpl",
+            "X2luX2J5dGVzGAQgASgLMhsuZ29vZ2xlLnByb3RvYnVmLkludDMyVmFsdWUS",
+            "PwoZbWVzc2FnZV9zaXplX2luX21lZ2FieXRlcxgFIAEoCzIcLmdvb2dsZS5w",
+            "cm90b2J1Zi5Eb3VibGVWYWx1ZSKOAQoQQ2hhdEhpc3RvcnlFbnRyeRIXCg9y",
+            "ZXF1ZXN0X21lc3NhZ2UYASABKAkSGAoQcmVzcG9uc2VfbWVzc2FnZRgCIAEo",
+            "CSJHCgxSZXNwb25zZVR5cGUSCwoHVU5LTk9XThAAEggKBEhFTFAQARIOCgpB",
+            "U1NJU1RBTkNFEAESDAoIR1JFRVRJTkcQAhoCEAEqMQoKQW5zd2VyVHlwZRIL",
+            "CgdVTktOT1dOEAASCAoESEVMUBABEgwKCEdSRUVUSU5HEAIyWAoHQ2hhdGJv",
+            "dBJNCgtTZW5kTWVzc2FnZRIfLmJhc2ljX2dycGNfc2VydmljZS5DaGF0UmVx",
+            "dWVzdBodLmJhc2ljX2dycGNfc2VydmljZS5DaGF0UmVwbHlCE6oCEEJhc2lj",
+            "R3JwY1NlcnZpY2ViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::BasicGrpcService.AnswerType), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::BasicGrpcService.ChatRequest), global::BasicGrpcService.ChatRequest.Parser, new[]{ "Name", "Message" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::BasicGrpcService.ChatReply), global::BasicGrpcService.ChatReply.Parser, new[]{ "Message", "AnswerFound", "ReplyInBytes", "Payload" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::BasicGrpcService.NumericPayload), global::BasicGrpcService.NumericPayload.Parser, new[]{ "FloatDemo", "DoubleDemo", "Int32Demo", "Int64Demo", "Uint32Demo", "Uint64Demo", "Sint32Demo", "Sint64Demo", "Fixed32Demo", "Fixed64Demo", "Sfixed32Demo", "Sfixed64Demo" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::BasicGrpcService.ChatReply), global::BasicGrpcService.ChatReply.Parser, new[]{ "Message", "AnswerFound", "ReplyInBytes", "MessageSizeInBytes", "MessageSizeInMegabytes" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::BasicGrpcService.ChatHistoryEntry), global::BasicGrpcService.ChatHistoryEntry.Parser, new[]{ "RequestMessage", "ResponseMessage" }, null, new[]{ typeof(global::BasicGrpcService.ChatHistoryEntry.Types.ResponseType) }, null, null)
           }));
     }
     #endregion
 
   }
+  #region Enums
+  public enum AnswerType {
+    [pbr::OriginalName("UNKNOWN")] Unknown = 0,
+    [pbr::OriginalName("HELP")] Help = 1,
+    [pbr::OriginalName("GREETING")] Greeting = 2,
+  }
+
+  #endregion
+
   #region Messages
+  /// <summary>
+  ///
+  ///// commented for demonstrating well-known-types
+  ///message ChatRequest {
+  ///string name = 1;
+  ///string message = 2;
+  ///}
+  /// </summary>
   public sealed partial class ChatRequest : pb::IMessage<ChatRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -79,8 +100,8 @@ namespace BasicGrpcService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ChatRequest(ChatRequest other) : this() {
-      name_ = other.name_;
-      message_ = other.message_;
+      Name = other.Name;
+      Message = other.Message;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,25 +112,29 @@ namespace BasicGrpcService {
 
     /// <summary>Field number for the "name" field.</summary>
     public const int NameFieldNumber = 1;
-    private string name_ = "";
+    private static readonly pb::FieldCodec<string> _single_name_codec = pb::FieldCodec.ForClassWrapper<string>(10);
+    private string name_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
       get { return name_; }
       set {
-        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        name_ = value;
       }
     }
 
+
     /// <summary>Field number for the "message" field.</summary>
     public const int MessageFieldNumber = 2;
-    private string message_ = "";
+    private static readonly pb::FieldCodec<string> _single_message_codec = pb::FieldCodec.ForClassWrapper<string>(18);
+    private string message_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Message {
       get { return message_; }
       set {
-        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        message_ = value;
       }
     }
+
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
@@ -132,8 +157,8 @@ namespace BasicGrpcService {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (Message.Length != 0) hash ^= Message.GetHashCode();
+      if (name_ != null) hash ^= Name.GetHashCode();
+      if (message_ != null) hash ^= Message.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -150,13 +175,11 @@ namespace BasicGrpcService {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Name.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Name);
+      if (name_ != null) {
+        _single_name_codec.WriteTagAndValue(output, Name);
       }
-      if (Message.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(Message);
+      if (message_ != null) {
+        _single_message_codec.WriteTagAndValue(output, Message);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -167,13 +190,11 @@ namespace BasicGrpcService {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Name.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Name);
+      if (name_ != null) {
+        _single_name_codec.WriteTagAndValue(ref output, Name);
       }
-      if (Message.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(Message);
+      if (message_ != null) {
+        _single_message_codec.WriteTagAndValue(ref output, Message);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -184,11 +205,11 @@ namespace BasicGrpcService {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Name.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      if (name_ != null) {
+        size += _single_name_codec.CalculateSizeWithTag(Name);
       }
-      if (Message.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
+      if (message_ != null) {
+        size += _single_message_codec.CalculateSizeWithTag(Message);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -201,11 +222,15 @@ namespace BasicGrpcService {
       if (other == null) {
         return;
       }
-      if (other.Name.Length != 0) {
-        Name = other.Name;
+      if (other.name_ != null) {
+        if (name_ == null || other.Name != "") {
+          Name = other.Name;
+        }
       }
-      if (other.Message.Length != 0) {
-        Message = other.Message;
+      if (other.message_ != null) {
+        if (message_ == null || other.Message != "") {
+          Message = other.Message;
+        }
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -222,11 +247,17 @@ namespace BasicGrpcService {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            Name = input.ReadString();
+            string value = _single_name_codec.Read(input);
+            if (name_ == null || value != "") {
+              Name = value;
+            }
             break;
           }
           case 18: {
-            Message = input.ReadString();
+            string value = _single_message_codec.Read(input);
+            if (message_ == null || value != "") {
+              Message = value;
+            }
             break;
           }
         }
@@ -244,11 +275,17 @@ namespace BasicGrpcService {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            Name = input.ReadString();
+            string value = _single_name_codec.Read(ref input);
+            if (name_ == null || value != "") {
+              Name = value;
+            }
             break;
           }
           case 18: {
-            Message = input.ReadString();
+            string value = _single_message_codec.Read(ref input);
+            if (message_ == null || value != "") {
+              Message = value;
+            }
             break;
           }
         }
@@ -287,10 +324,11 @@ namespace BasicGrpcService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ChatReply(ChatReply other) : this() {
-      message_ = other.message_;
-      answerFound_ = other.answerFound_;
-      replyInBytes_ = other.replyInBytes_;
-      payload_ = other.payload_ != null ? other.payload_.Clone() : null;
+      Message = other.Message;
+      AnswerFound = other.AnswerFound;
+      ReplyInBytes = other.ReplyInBytes;
+      MessageSizeInBytes = other.MessageSizeInBytes;
+      MessageSizeInMegabytes = other.MessageSizeInMegabytes;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -301,47 +339,68 @@ namespace BasicGrpcService {
 
     /// <summary>Field number for the "message" field.</summary>
     public const int MessageFieldNumber = 1;
-    private string message_ = "";
+    private static readonly pb::FieldCodec<string> _single_message_codec = pb::FieldCodec.ForClassWrapper<string>(10);
+    private string message_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Message {
       get { return message_; }
       set {
-        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        message_ = value;
       }
     }
 
+
     /// <summary>Field number for the "answer_found" field.</summary>
     public const int AnswerFoundFieldNumber = 2;
-    private bool answerFound_;
+    private static readonly pb::FieldCodec<bool?> _single_answerFound_codec = pb::FieldCodec.ForStructWrapper<bool>(18);
+    private bool? answerFound_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool AnswerFound {
+    public bool? AnswerFound {
       get { return answerFound_; }
       set {
         answerFound_ = value;
       }
     }
 
+
     /// <summary>Field number for the "reply_in_bytes" field.</summary>
     public const int ReplyInBytesFieldNumber = 3;
-    private pb::ByteString replyInBytes_ = pb::ByteString.Empty;
+    private static readonly pb::FieldCodec<pb::ByteString> _single_replyInBytes_codec = pb::FieldCodec.ForClassWrapper<pb::ByteString>(26);
+    private pb::ByteString replyInBytes_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString ReplyInBytes {
       get { return replyInBytes_; }
       set {
-        replyInBytes_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        replyInBytes_ = value;
       }
     }
 
-    /// <summary>Field number for the "payload" field.</summary>
-    public const int PayloadFieldNumber = 4;
-    private global::BasicGrpcService.NumericPayload payload_;
+
+    /// <summary>Field number for the "message_size_in_bytes" field.</summary>
+    public const int MessageSizeInBytesFieldNumber = 4;
+    private static readonly pb::FieldCodec<int?> _single_messageSizeInBytes_codec = pb::FieldCodec.ForStructWrapper<int>(34);
+    private int? messageSizeInBytes_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::BasicGrpcService.NumericPayload Payload {
-      get { return payload_; }
+    public int? MessageSizeInBytes {
+      get { return messageSizeInBytes_; }
       set {
-        payload_ = value;
+        messageSizeInBytes_ = value;
       }
     }
+
+
+    /// <summary>Field number for the "message_size_in_megabytes" field.</summary>
+    public const int MessageSizeInMegabytesFieldNumber = 5;
+    private static readonly pb::FieldCodec<double?> _single_messageSizeInMegabytes_codec = pb::FieldCodec.ForStructWrapper<double>(42);
+    private double? messageSizeInMegabytes_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public double? MessageSizeInMegabytes {
+      get { return messageSizeInMegabytes_; }
+      set {
+        messageSizeInMegabytes_ = value;
+      }
+    }
+
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
@@ -359,17 +418,19 @@ namespace BasicGrpcService {
       if (Message != other.Message) return false;
       if (AnswerFound != other.AnswerFound) return false;
       if (ReplyInBytes != other.ReplyInBytes) return false;
-      if (!object.Equals(Payload, other.Payload)) return false;
+      if (MessageSizeInBytes != other.MessageSizeInBytes) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseNullableDoubleEqualityComparer.Equals(MessageSizeInMegabytes, other.MessageSizeInMegabytes)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Message.Length != 0) hash ^= Message.GetHashCode();
-      if (AnswerFound != false) hash ^= AnswerFound.GetHashCode();
-      if (ReplyInBytes.Length != 0) hash ^= ReplyInBytes.GetHashCode();
-      if (payload_ != null) hash ^= Payload.GetHashCode();
+      if (message_ != null) hash ^= Message.GetHashCode();
+      if (answerFound_ != null) hash ^= AnswerFound.GetHashCode();
+      if (replyInBytes_ != null) hash ^= ReplyInBytes.GetHashCode();
+      if (messageSizeInBytes_ != null) hash ^= MessageSizeInBytes.GetHashCode();
+      if (messageSizeInMegabytes_ != null) hash ^= pbc::ProtobufEqualityComparers.BitwiseNullableDoubleEqualityComparer.GetHashCode(MessageSizeInMegabytes);
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -386,21 +447,20 @@ namespace BasicGrpcService {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Message.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Message);
+      if (message_ != null) {
+        _single_message_codec.WriteTagAndValue(output, Message);
       }
-      if (AnswerFound != false) {
-        output.WriteRawTag(16);
-        output.WriteBool(AnswerFound);
+      if (answerFound_ != null) {
+        _single_answerFound_codec.WriteTagAndValue(output, AnswerFound);
       }
-      if (ReplyInBytes.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteBytes(ReplyInBytes);
+      if (replyInBytes_ != null) {
+        _single_replyInBytes_codec.WriteTagAndValue(output, ReplyInBytes);
       }
-      if (payload_ != null) {
-        output.WriteRawTag(34);
-        output.WriteMessage(Payload);
+      if (messageSizeInBytes_ != null) {
+        _single_messageSizeInBytes_codec.WriteTagAndValue(output, MessageSizeInBytes);
+      }
+      if (messageSizeInMegabytes_ != null) {
+        _single_messageSizeInMegabytes_codec.WriteTagAndValue(output, MessageSizeInMegabytes);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -411,21 +471,20 @@ namespace BasicGrpcService {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Message.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Message);
+      if (message_ != null) {
+        _single_message_codec.WriteTagAndValue(ref output, Message);
       }
-      if (AnswerFound != false) {
-        output.WriteRawTag(16);
-        output.WriteBool(AnswerFound);
+      if (answerFound_ != null) {
+        _single_answerFound_codec.WriteTagAndValue(ref output, AnswerFound);
       }
-      if (ReplyInBytes.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteBytes(ReplyInBytes);
+      if (replyInBytes_ != null) {
+        _single_replyInBytes_codec.WriteTagAndValue(ref output, ReplyInBytes);
       }
-      if (payload_ != null) {
-        output.WriteRawTag(34);
-        output.WriteMessage(Payload);
+      if (messageSizeInBytes_ != null) {
+        _single_messageSizeInBytes_codec.WriteTagAndValue(ref output, MessageSizeInBytes);
+      }
+      if (messageSizeInMegabytes_ != null) {
+        _single_messageSizeInMegabytes_codec.WriteTagAndValue(ref output, MessageSizeInMegabytes);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -436,17 +495,20 @@ namespace BasicGrpcService {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Message.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
+      if (message_ != null) {
+        size += _single_message_codec.CalculateSizeWithTag(Message);
       }
-      if (AnswerFound != false) {
-        size += 1 + 1;
+      if (answerFound_ != null) {
+        size += _single_answerFound_codec.CalculateSizeWithTag(AnswerFound);
       }
-      if (ReplyInBytes.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeBytesSize(ReplyInBytes);
+      if (replyInBytes_ != null) {
+        size += _single_replyInBytes_codec.CalculateSizeWithTag(ReplyInBytes);
       }
-      if (payload_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Payload);
+      if (messageSizeInBytes_ != null) {
+        size += _single_messageSizeInBytes_codec.CalculateSizeWithTag(MessageSizeInBytes);
+      }
+      if (messageSizeInMegabytes_ != null) {
+        size += _single_messageSizeInMegabytes_codec.CalculateSizeWithTag(MessageSizeInMegabytes);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -459,20 +521,30 @@ namespace BasicGrpcService {
       if (other == null) {
         return;
       }
-      if (other.Message.Length != 0) {
-        Message = other.Message;
-      }
-      if (other.AnswerFound != false) {
-        AnswerFound = other.AnswerFound;
-      }
-      if (other.ReplyInBytes.Length != 0) {
-        ReplyInBytes = other.ReplyInBytes;
-      }
-      if (other.payload_ != null) {
-        if (payload_ == null) {
-          Payload = new global::BasicGrpcService.NumericPayload();
+      if (other.message_ != null) {
+        if (message_ == null || other.Message != "") {
+          Message = other.Message;
         }
-        Payload.MergeFrom(other.Payload);
+      }
+      if (other.answerFound_ != null) {
+        if (answerFound_ == null || other.AnswerFound != false) {
+          AnswerFound = other.AnswerFound;
+        }
+      }
+      if (other.replyInBytes_ != null) {
+        if (replyInBytes_ == null || other.ReplyInBytes != pb::ByteString.Empty) {
+          ReplyInBytes = other.ReplyInBytes;
+        }
+      }
+      if (other.messageSizeInBytes_ != null) {
+        if (messageSizeInBytes_ == null || other.MessageSizeInBytes != 0) {
+          MessageSizeInBytes = other.MessageSizeInBytes;
+        }
+      }
+      if (other.messageSizeInMegabytes_ != null) {
+        if (messageSizeInMegabytes_ == null || other.MessageSizeInMegabytes != 0D) {
+          MessageSizeInMegabytes = other.MessageSizeInMegabytes;
+        }
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -489,22 +561,38 @@ namespace BasicGrpcService {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            Message = input.ReadString();
+            string value = _single_message_codec.Read(input);
+            if (message_ == null || value != "") {
+              Message = value;
+            }
             break;
           }
-          case 16: {
-            AnswerFound = input.ReadBool();
+          case 18: {
+            bool? value = _single_answerFound_codec.Read(input);
+            if (answerFound_ == null || value != false) {
+              AnswerFound = value;
+            }
             break;
           }
           case 26: {
-            ReplyInBytes = input.ReadBytes();
+            pb::ByteString value = _single_replyInBytes_codec.Read(input);
+            if (replyInBytes_ == null || value != pb::ByteString.Empty) {
+              ReplyInBytes = value;
+            }
             break;
           }
           case 34: {
-            if (payload_ == null) {
-              Payload = new global::BasicGrpcService.NumericPayload();
+            int? value = _single_messageSizeInBytes_codec.Read(input);
+            if (messageSizeInBytes_ == null || value != 0) {
+              MessageSizeInBytes = value;
             }
-            input.ReadMessage(Payload);
+            break;
+          }
+          case 42: {
+            double? value = _single_messageSizeInMegabytes_codec.Read(input);
+            if (messageSizeInMegabytes_ == null || value != 0D) {
+              MessageSizeInMegabytes = value;
+            }
             break;
           }
         }
@@ -522,22 +610,38 @@ namespace BasicGrpcService {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            Message = input.ReadString();
+            string value = _single_message_codec.Read(ref input);
+            if (message_ == null || value != "") {
+              Message = value;
+            }
             break;
           }
-          case 16: {
-            AnswerFound = input.ReadBool();
+          case 18: {
+            bool? value = _single_answerFound_codec.Read(ref input);
+            if (answerFound_ == null || value != false) {
+              AnswerFound = value;
+            }
             break;
           }
           case 26: {
-            ReplyInBytes = input.ReadBytes();
+            pb::ByteString value = _single_replyInBytes_codec.Read(ref input);
+            if (replyInBytes_ == null || value != pb::ByteString.Empty) {
+              ReplyInBytes = value;
+            }
             break;
           }
           case 34: {
-            if (payload_ == null) {
-              Payload = new global::BasicGrpcService.NumericPayload();
+            int? value = _single_messageSizeInBytes_codec.Read(ref input);
+            if (messageSizeInBytes_ == null || value != 0) {
+              MessageSizeInBytes = value;
             }
-            input.ReadMessage(Payload);
+            break;
+          }
+          case 42: {
+            double? value = _single_messageSizeInMegabytes_codec.Read(ref input);
+            if (messageSizeInMegabytes_ == null || value != 0D) {
+              MessageSizeInMegabytes = value;
+            }
             break;
           }
         }
@@ -547,15 +651,15 @@ namespace BasicGrpcService {
 
   }
 
-  public sealed partial class NumericPayload : pb::IMessage<NumericPayload>
+  public sealed partial class ChatHistoryEntry : pb::IMessage<ChatHistoryEntry>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<NumericPayload> _parser = new pb::MessageParser<NumericPayload>(() => new NumericPayload());
+    private static readonly pb::MessageParser<ChatHistoryEntry> _parser = new pb::MessageParser<ChatHistoryEntry>(() => new ChatHistoryEntry());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<NumericPayload> Parser { get { return _parser; } }
+    public static pb::MessageParser<ChatHistoryEntry> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -568,209 +672,69 @@ namespace BasicGrpcService {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public NumericPayload() {
+    public ChatHistoryEntry() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public NumericPayload(NumericPayload other) : this() {
-      floatDemo_ = other.floatDemo_;
-      doubleDemo_ = other.doubleDemo_;
-      int32Demo_ = other.int32Demo_;
-      int64Demo_ = other.int64Demo_;
-      uint32Demo_ = other.uint32Demo_;
-      uint64Demo_ = other.uint64Demo_;
-      sint32Demo_ = other.sint32Demo_;
-      sint64Demo_ = other.sint64Demo_;
-      fixed32Demo_ = other.fixed32Demo_;
-      fixed64Demo_ = other.fixed64Demo_;
-      sfixed32Demo_ = other.sfixed32Demo_;
-      sfixed64Demo_ = other.sfixed64Demo_;
+    public ChatHistoryEntry(ChatHistoryEntry other) : this() {
+      requestMessage_ = other.requestMessage_;
+      responseMessage_ = other.responseMessage_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public NumericPayload Clone() {
-      return new NumericPayload(this);
+    public ChatHistoryEntry Clone() {
+      return new ChatHistoryEntry(this);
     }
 
-    /// <summary>Field number for the "float_demo" field.</summary>
-    public const int FloatDemoFieldNumber = 1;
-    private float floatDemo_;
+    /// <summary>Field number for the "request_message" field.</summary>
+    public const int RequestMessageFieldNumber = 1;
+    private string requestMessage_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public float FloatDemo {
-      get { return floatDemo_; }
+    public string RequestMessage {
+      get { return requestMessage_; }
       set {
-        floatDemo_ = value;
+        requestMessage_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "double_demo" field.</summary>
-    public const int DoubleDemoFieldNumber = 2;
-    private double doubleDemo_;
+    /// <summary>Field number for the "response_message" field.</summary>
+    public const int ResponseMessageFieldNumber = 2;
+    private string responseMessage_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public double DoubleDemo {
-      get { return doubleDemo_; }
+    public string ResponseMessage {
+      get { return responseMessage_; }
       set {
-        doubleDemo_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "int32_demo" field.</summary>
-    public const int Int32DemoFieldNumber = 3;
-    private int int32Demo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Int32Demo {
-      get { return int32Demo_; }
-      set {
-        int32Demo_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "int64_demo" field.</summary>
-    public const int Int64DemoFieldNumber = 4;
-    private long int64Demo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public long Int64Demo {
-      get { return int64Demo_; }
-      set {
-        int64Demo_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "uint32_demo" field.</summary>
-    public const int Uint32DemoFieldNumber = 5;
-    private uint uint32Demo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public uint Uint32Demo {
-      get { return uint32Demo_; }
-      set {
-        uint32Demo_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "uint64_demo" field.</summary>
-    public const int Uint64DemoFieldNumber = 6;
-    private ulong uint64Demo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ulong Uint64Demo {
-      get { return uint64Demo_; }
-      set {
-        uint64Demo_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "sint32_demo" field.</summary>
-    public const int Sint32DemoFieldNumber = 7;
-    private int sint32Demo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Sint32Demo {
-      get { return sint32Demo_; }
-      set {
-        sint32Demo_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "sint64_demo" field.</summary>
-    public const int Sint64DemoFieldNumber = 8;
-    private long sint64Demo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public long Sint64Demo {
-      get { return sint64Demo_; }
-      set {
-        sint64Demo_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "fixed32_demo" field.</summary>
-    public const int Fixed32DemoFieldNumber = 9;
-    private uint fixed32Demo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public uint Fixed32Demo {
-      get { return fixed32Demo_; }
-      set {
-        fixed32Demo_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "fixed64_demo" field.</summary>
-    public const int Fixed64DemoFieldNumber = 10;
-    private ulong fixed64Demo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ulong Fixed64Demo {
-      get { return fixed64Demo_; }
-      set {
-        fixed64Demo_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "sfixed32_demo" field.</summary>
-    public const int Sfixed32DemoFieldNumber = 11;
-    private int sfixed32Demo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Sfixed32Demo {
-      get { return sfixed32Demo_; }
-      set {
-        sfixed32Demo_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "sfixed64_demo" field.</summary>
-    public const int Sfixed64DemoFieldNumber = 12;
-    private long sfixed64Demo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public long Sfixed64Demo {
-      get { return sfixed64Demo_; }
-      set {
-        sfixed64Demo_ = value;
+        responseMessage_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as NumericPayload);
+      return Equals(other as ChatHistoryEntry);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(NumericPayload other) {
+    public bool Equals(ChatHistoryEntry other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(FloatDemo, other.FloatDemo)) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(DoubleDemo, other.DoubleDemo)) return false;
-      if (Int32Demo != other.Int32Demo) return false;
-      if (Int64Demo != other.Int64Demo) return false;
-      if (Uint32Demo != other.Uint32Demo) return false;
-      if (Uint64Demo != other.Uint64Demo) return false;
-      if (Sint32Demo != other.Sint32Demo) return false;
-      if (Sint64Demo != other.Sint64Demo) return false;
-      if (Fixed32Demo != other.Fixed32Demo) return false;
-      if (Fixed64Demo != other.Fixed64Demo) return false;
-      if (Sfixed32Demo != other.Sfixed32Demo) return false;
-      if (Sfixed64Demo != other.Sfixed64Demo) return false;
+      if (RequestMessage != other.RequestMessage) return false;
+      if (ResponseMessage != other.ResponseMessage) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (FloatDemo != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(FloatDemo);
-      if (DoubleDemo != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(DoubleDemo);
-      if (Int32Demo != 0) hash ^= Int32Demo.GetHashCode();
-      if (Int64Demo != 0L) hash ^= Int64Demo.GetHashCode();
-      if (Uint32Demo != 0) hash ^= Uint32Demo.GetHashCode();
-      if (Uint64Demo != 0UL) hash ^= Uint64Demo.GetHashCode();
-      if (Sint32Demo != 0) hash ^= Sint32Demo.GetHashCode();
-      if (Sint64Demo != 0L) hash ^= Sint64Demo.GetHashCode();
-      if (Fixed32Demo != 0) hash ^= Fixed32Demo.GetHashCode();
-      if (Fixed64Demo != 0UL) hash ^= Fixed64Demo.GetHashCode();
-      if (Sfixed32Demo != 0) hash ^= Sfixed32Demo.GetHashCode();
-      if (Sfixed64Demo != 0L) hash ^= Sfixed64Demo.GetHashCode();
+      if (RequestMessage.Length != 0) hash ^= RequestMessage.GetHashCode();
+      if (ResponseMessage.Length != 0) hash ^= ResponseMessage.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -787,53 +751,13 @@ namespace BasicGrpcService {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (FloatDemo != 0F) {
-        output.WriteRawTag(13);
-        output.WriteFloat(FloatDemo);
+      if (RequestMessage.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(RequestMessage);
       }
-      if (DoubleDemo != 0D) {
-        output.WriteRawTag(17);
-        output.WriteDouble(DoubleDemo);
-      }
-      if (Int32Demo != 0) {
-        output.WriteRawTag(24);
-        output.WriteInt32(Int32Demo);
-      }
-      if (Int64Demo != 0L) {
-        output.WriteRawTag(32);
-        output.WriteInt64(Int64Demo);
-      }
-      if (Uint32Demo != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(Uint32Demo);
-      }
-      if (Uint64Demo != 0UL) {
-        output.WriteRawTag(48);
-        output.WriteUInt64(Uint64Demo);
-      }
-      if (Sint32Demo != 0) {
-        output.WriteRawTag(56);
-        output.WriteSInt32(Sint32Demo);
-      }
-      if (Sint64Demo != 0L) {
-        output.WriteRawTag(64);
-        output.WriteSInt64(Sint64Demo);
-      }
-      if (Fixed32Demo != 0) {
-        output.WriteRawTag(77);
-        output.WriteFixed32(Fixed32Demo);
-      }
-      if (Fixed64Demo != 0UL) {
-        output.WriteRawTag(81);
-        output.WriteFixed64(Fixed64Demo);
-      }
-      if (Sfixed32Demo != 0) {
-        output.WriteRawTag(93);
-        output.WriteSFixed32(Sfixed32Demo);
-      }
-      if (Sfixed64Demo != 0L) {
-        output.WriteRawTag(97);
-        output.WriteSFixed64(Sfixed64Demo);
+      if (ResponseMessage.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(ResponseMessage);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -844,53 +768,13 @@ namespace BasicGrpcService {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (FloatDemo != 0F) {
-        output.WriteRawTag(13);
-        output.WriteFloat(FloatDemo);
+      if (RequestMessage.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(RequestMessage);
       }
-      if (DoubleDemo != 0D) {
-        output.WriteRawTag(17);
-        output.WriteDouble(DoubleDemo);
-      }
-      if (Int32Demo != 0) {
-        output.WriteRawTag(24);
-        output.WriteInt32(Int32Demo);
-      }
-      if (Int64Demo != 0L) {
-        output.WriteRawTag(32);
-        output.WriteInt64(Int64Demo);
-      }
-      if (Uint32Demo != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(Uint32Demo);
-      }
-      if (Uint64Demo != 0UL) {
-        output.WriteRawTag(48);
-        output.WriteUInt64(Uint64Demo);
-      }
-      if (Sint32Demo != 0) {
-        output.WriteRawTag(56);
-        output.WriteSInt32(Sint32Demo);
-      }
-      if (Sint64Demo != 0L) {
-        output.WriteRawTag(64);
-        output.WriteSInt64(Sint64Demo);
-      }
-      if (Fixed32Demo != 0) {
-        output.WriteRawTag(77);
-        output.WriteFixed32(Fixed32Demo);
-      }
-      if (Fixed64Demo != 0UL) {
-        output.WriteRawTag(81);
-        output.WriteFixed64(Fixed64Demo);
-      }
-      if (Sfixed32Demo != 0) {
-        output.WriteRawTag(93);
-        output.WriteSFixed32(Sfixed32Demo);
-      }
-      if (Sfixed64Demo != 0L) {
-        output.WriteRawTag(97);
-        output.WriteSFixed64(Sfixed64Demo);
+      if (ResponseMessage.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(ResponseMessage);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -901,41 +785,11 @@ namespace BasicGrpcService {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (FloatDemo != 0F) {
-        size += 1 + 4;
+      if (RequestMessage.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(RequestMessage);
       }
-      if (DoubleDemo != 0D) {
-        size += 1 + 8;
-      }
-      if (Int32Demo != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Int32Demo);
-      }
-      if (Int64Demo != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Int64Demo);
-      }
-      if (Uint32Demo != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uint32Demo);
-      }
-      if (Uint64Demo != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Uint64Demo);
-      }
-      if (Sint32Demo != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeSInt32Size(Sint32Demo);
-      }
-      if (Sint64Demo != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeSInt64Size(Sint64Demo);
-      }
-      if (Fixed32Demo != 0) {
-        size += 1 + 4;
-      }
-      if (Fixed64Demo != 0UL) {
-        size += 1 + 8;
-      }
-      if (Sfixed32Demo != 0) {
-        size += 1 + 4;
-      }
-      if (Sfixed64Demo != 0L) {
-        size += 1 + 8;
+      if (ResponseMessage.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ResponseMessage);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -944,45 +798,15 @@ namespace BasicGrpcService {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(NumericPayload other) {
+    public void MergeFrom(ChatHistoryEntry other) {
       if (other == null) {
         return;
       }
-      if (other.FloatDemo != 0F) {
-        FloatDemo = other.FloatDemo;
+      if (other.RequestMessage.Length != 0) {
+        RequestMessage = other.RequestMessage;
       }
-      if (other.DoubleDemo != 0D) {
-        DoubleDemo = other.DoubleDemo;
-      }
-      if (other.Int32Demo != 0) {
-        Int32Demo = other.Int32Demo;
-      }
-      if (other.Int64Demo != 0L) {
-        Int64Demo = other.Int64Demo;
-      }
-      if (other.Uint32Demo != 0) {
-        Uint32Demo = other.Uint32Demo;
-      }
-      if (other.Uint64Demo != 0UL) {
-        Uint64Demo = other.Uint64Demo;
-      }
-      if (other.Sint32Demo != 0) {
-        Sint32Demo = other.Sint32Demo;
-      }
-      if (other.Sint64Demo != 0L) {
-        Sint64Demo = other.Sint64Demo;
-      }
-      if (other.Fixed32Demo != 0) {
-        Fixed32Demo = other.Fixed32Demo;
-      }
-      if (other.Fixed64Demo != 0UL) {
-        Fixed64Demo = other.Fixed64Demo;
-      }
-      if (other.Sfixed32Demo != 0) {
-        Sfixed32Demo = other.Sfixed32Demo;
-      }
-      if (other.Sfixed64Demo != 0L) {
-        Sfixed64Demo = other.Sfixed64Demo;
+      if (other.ResponseMessage.Length != 0) {
+        ResponseMessage = other.ResponseMessage;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -998,52 +822,12 @@ namespace BasicGrpcService {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 13: {
-            FloatDemo = input.ReadFloat();
+          case 10: {
+            RequestMessage = input.ReadString();
             break;
           }
-          case 17: {
-            DoubleDemo = input.ReadDouble();
-            break;
-          }
-          case 24: {
-            Int32Demo = input.ReadInt32();
-            break;
-          }
-          case 32: {
-            Int64Demo = input.ReadInt64();
-            break;
-          }
-          case 40: {
-            Uint32Demo = input.ReadUInt32();
-            break;
-          }
-          case 48: {
-            Uint64Demo = input.ReadUInt64();
-            break;
-          }
-          case 56: {
-            Sint32Demo = input.ReadSInt32();
-            break;
-          }
-          case 64: {
-            Sint64Demo = input.ReadSInt64();
-            break;
-          }
-          case 77: {
-            Fixed32Demo = input.ReadFixed32();
-            break;
-          }
-          case 81: {
-            Fixed64Demo = input.ReadFixed64();
-            break;
-          }
-          case 93: {
-            Sfixed32Demo = input.ReadSFixed32();
-            break;
-          }
-          case 97: {
-            Sfixed64Demo = input.ReadSFixed64();
+          case 18: {
+            ResponseMessage = input.ReadString();
             break;
           }
         }
@@ -1060,58 +844,32 @@ namespace BasicGrpcService {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 13: {
-            FloatDemo = input.ReadFloat();
+          case 10: {
+            RequestMessage = input.ReadString();
             break;
           }
-          case 17: {
-            DoubleDemo = input.ReadDouble();
-            break;
-          }
-          case 24: {
-            Int32Demo = input.ReadInt32();
-            break;
-          }
-          case 32: {
-            Int64Demo = input.ReadInt64();
-            break;
-          }
-          case 40: {
-            Uint32Demo = input.ReadUInt32();
-            break;
-          }
-          case 48: {
-            Uint64Demo = input.ReadUInt64();
-            break;
-          }
-          case 56: {
-            Sint32Demo = input.ReadSInt32();
-            break;
-          }
-          case 64: {
-            Sint64Demo = input.ReadSInt64();
-            break;
-          }
-          case 77: {
-            Fixed32Demo = input.ReadFixed32();
-            break;
-          }
-          case 81: {
-            Fixed64Demo = input.ReadFixed64();
-            break;
-          }
-          case 93: {
-            Sfixed32Demo = input.ReadSFixed32();
-            break;
-          }
-          case 97: {
-            Sfixed64Demo = input.ReadSFixed64();
+          case 18: {
+            ResponseMessage = input.ReadString();
             break;
           }
         }
       }
     }
     #endif
+
+    #region Nested types
+    /// <summary>Container for nested types declared in the ChatHistoryEntry message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static partial class Types {
+      public enum ResponseType {
+        [pbr::OriginalName("UNKNOWN")] Unknown = 0,
+        [pbr::OriginalName("HELP")] Help = 1,
+        [pbr::OriginalName("ASSISTANCE", PreferredAlias = false)] Assistance = 1,
+        [pbr::OriginalName("GREETING")] Greeting = 2,
+      }
+
+    }
+    #endregion
 
   }
 
