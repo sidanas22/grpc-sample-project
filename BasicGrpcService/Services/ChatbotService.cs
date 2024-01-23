@@ -1,4 +1,5 @@
 using Google.Protobuf;
+using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
 using System.Text;
 
@@ -55,6 +56,8 @@ public class ChatbotService : Chatbot.ChatbotBase
 
         reply.MessageSizeInBytes = reply.ReplyInBytes.Length;
         reply.MessageSizeInMegabytes = (double)reply.MessageSizeInBytes / (1024 * 1024);
+        reply.RequestReceivedTime = Timestamp.FromDateTime(DateTime.UtcNow);
+        reply.RequestProcessedDuration = reply.RequestReceivedTime - request.RequestStartTime;
 
 
         //foreach (var entry in _historyStore.GetHistory())

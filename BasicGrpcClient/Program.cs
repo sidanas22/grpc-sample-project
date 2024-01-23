@@ -1,7 +1,7 @@
 using BasicGrpcService;
+using Google.Protobuf.WellKnownTypes;
 using Grpc.Net.Client;
 using System.Text;
-using System.Text.Json;
 
 Console.WriteLine("What is your name?");
 var name = Console.ReadLine();
@@ -25,7 +25,8 @@ while (true)
                   new ChatRequest
                   {
                       Name = name,
-                      Message = message
+                      Message = message,
+                      RequestStartTime = Timestamp.FromDateTime(DateTime.UtcNow)
                   });
     Console.WriteLine($"Reply: {reply.Message}");
     Console.WriteLine($"Answer found: {reply.AnswerFound}");
@@ -37,6 +38,8 @@ while (true)
     Console.WriteLine($"Reply from bytes: {messageBytes}");
     Console.WriteLine($"Message size in bytes: {reply.MessageSizeInBytes}");
     Console.WriteLine($"Message size in megabytes: {reply.MessageSizeInMegabytes}");
+    Console.WriteLine($"Request received time: {reply.RequestReceivedTime}");
+    Console.WriteLine($"Request processed duration: {reply.RequestProcessedDuration}");
 
     /*
      // Commented for demonstrating well-known types
