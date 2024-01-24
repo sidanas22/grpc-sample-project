@@ -16,7 +16,7 @@ public class ChatbotService : Chatbot.ChatbotBase
         _historyStore = historyStore;
     }
 
-    public override async Task<Response.ChatReply> SendMessages(IAsyncStreamReader<ChatRequest> requestStream, ServerCallContext context)
+    public override async Task SendMessages(IAsyncStreamReader<ChatRequest> requestStream,IServerStreamWriter<ChatReply> responseStream, ServerCallContext context)
     {
         _logger.LogDebug("Message received from the client {Peer}.", context.Peer);
 
@@ -63,6 +63,8 @@ public class ChatbotService : Chatbot.ChatbotBase
             reply.RequestProcessedDuration = reply.RequestReceivedTime - request.RequestStartTime;
             reply.DynamicPayload = Any.Pack(request);
 
+            await responseStream.WriteAsync(reply);
+
         }
 
 
@@ -85,7 +87,7 @@ public class ChatbotService : Chatbot.ChatbotBase
         // }
 
         //return Task.FromResult(reply);
-        return reply;
+        //return reply;
 
         //await responseStream.WriteAsync(reply);
         //reply.Message = "What else can I help you with?";

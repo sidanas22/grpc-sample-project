@@ -1,5 +1,6 @@
 using BasicGrpcService;
 using Google.Protobuf.WellKnownTypes;
+using Grpc.Core;
 using Grpc.Net.Client;
 using System.Text;
 using System.Text.Json;
@@ -47,6 +48,15 @@ while (true)
     */
 
     using var call = client.SendMessages();
+    
+    var readTask = Task.Run(async () =>
+    {
+        await foreach (var response in call.ResponseStream.ReadAllAsync())
+        {
+            Console.WriteLine($"Reply: {response.Message}");
+        }
+    });
+
     await call.RequestStream.WriteAsync(new ChatRequest
     {
         Name = name,
@@ -62,8 +72,12 @@ while (true)
     });
 
     await call.RequestStream.CompleteAsync();
-    var response = await call;
-    Console.WriteLine($"Reply: {response.Message}");
+    // No longer need to await call object since this is a bidirectional grpc call
+    //var response = await call;
+    //We do need to await readTask now
+    await readTask;
+    
+    //Console.WriteLine($"Reply: {response.Message}");
 
 
     /*
