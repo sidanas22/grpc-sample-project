@@ -4,7 +4,19 @@ using Microsoft.AspNetCore.Server.Kestrel.Core;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddGrpc();
+builder.Services.AddGrpc(options =>
+{
+    options.EnableDetailedErrors = true;
+    options.MaxReceiveMessageSize = 2 * 1024 * 1024;
+    options.MaxSendMessageSize = 5 * 1024 * 1024;
+    options.ResponseCompressionLevel = null;
+    options.IgnoreUnknownServices = true;
+    options.Interceptors.Add<TraceInterceptor>();
+
+    Console.WriteLine(options.CompressionProviders.Count);
+});
+
+builder.Services.AddSingleton<TraceInterceptor>();
 builder.Services.AddSingleton<IChatHistoryStore, ChatHistoryStore>();
 
 builder.Logging.ClearProviders();
