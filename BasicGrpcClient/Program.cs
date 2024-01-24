@@ -30,6 +30,7 @@ while (true)
     //                  RequestStartTime = Timestamp.FromDateTime(DateTime.UtcNow)
     //              });
 
+    /*
     using var call = client.SendMessage(
         new ChatRequest
         {
@@ -39,10 +40,30 @@ while (true)
 
         });
 
-    while(await call.ResponseStream.MoveNext(CancellationToken.None))
+    while (await call.ResponseStream.MoveNext(CancellationToken.None))
     {
         Console.WriteLine($"Reply: {call.ResponseStream.Current.Message}");
     }
+    */
+
+    using var call = client.SendMessages();
+    await call.RequestStream.WriteAsync(new ChatRequest
+    {
+        Name = name,
+        Message = message,
+        RequestStartTime = Timestamp.FromDateTime(DateTime.UtcNow)
+    });
+
+    await call.RequestStream.WriteAsync(new ChatRequest
+    {
+        Name = name,
+        Message = $"This message came from {name}.",
+        RequestStartTime = Timestamp.FromDateTime(DateTime.UtcNow)
+    });
+
+    await call.RequestStream.CompleteAsync();
+    var response = await call;
+    Console.WriteLine($"Reply: {response.Message}");
 
 
     /*

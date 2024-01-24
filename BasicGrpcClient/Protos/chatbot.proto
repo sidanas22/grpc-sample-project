@@ -10,7 +10,7 @@ import "google/protobuf/any.proto";
 package basic_grpc_service;
 
 service Chatbot {
-  rpc SendMessage (ChatRequest) returns (stream ChatReply);
+  rpc SendMessages (stream ChatRequest) returns (ChatReply);
 }
 
 message ChatRequest {
