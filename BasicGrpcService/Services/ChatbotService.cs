@@ -1,6 +1,7 @@
 using Google.Protobuf;
 using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
+using Response;
 using System.Text;
 
 namespace BasicGrpcService.Services;
@@ -15,10 +16,10 @@ public class ChatbotService : Chatbot.ChatbotBase
         _historyStore = historyStore;
     }
 
-    public override Task<Response.ChatReply> SendMessage(ChatRequest request, ServerCallContext context)
+    public override async Task SendMessage(ChatRequest request, IServerStreamWriter<ChatReply> responseStream,ServerCallContext context)
     {
         _logger.LogDebug("Message received from the client {Peer}.", context.Peer);
-
+        
         var reply = new Response.ChatReply();
 
         if (request.Message.ToLower().Contains("hello"))
@@ -77,7 +78,12 @@ public class ChatbotService : Chatbot.ChatbotBase
         //     reply.Payload.Add(GetPayload());
         // }
 
-        return Task.FromResult(reply);
+        //return Task.FromResult(reply);
+
+        await responseStream.WriteAsync(reply);
+        reply.Message = "What else can I help you with?";
+        await responseStream.WriteAsync(reply);
+
     }
 
     //private NumericPayload GetPayload()

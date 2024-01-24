@@ -22,13 +22,30 @@ while (true)
 
     Console.WriteLine($"Message: {message}");
 
-    var reply = await client.SendMessageAsync(
-                  new ChatRequest
-                  {
-                      Name = name,
-                      Message = message,
-                      RequestStartTime = Timestamp.FromDateTime(DateTime.UtcNow)
-                  });
+    //var reply = await client.SendMessageAsync(
+    //              new ChatRequest
+    //              {
+    //                  Name = name,
+    //                  Message = message,
+    //                  RequestStartTime = Timestamp.FromDateTime(DateTime.UtcNow)
+    //              });
+
+    using var call = client.SendMessage(
+        new ChatRequest
+        {
+            Name = name,
+            Message = message,
+            RequestStartTime = Timestamp.FromDateTime(DateTime.UtcNow)
+
+        });
+
+    while(await call.ResponseStream.MoveNext(CancellationToken.None))
+    {
+        Console.WriteLine($"Reply: {call.ResponseStream.Current.Message}");
+    }
+
+
+    /*
     Console.WriteLine($"Reply: {reply.Message}");
     Console.WriteLine($"Answer found: {reply.AnswerFound}");
 
@@ -44,6 +61,9 @@ while (true)
     Console.WriteLine($"Complete Reply Object: {JsonSerializer.Serialize(reply, new JsonSerializerOptions(){WriteIndented = true})}");
     Console.WriteLine($"Raw dynamic payload: {JsonSerializer.Serialize(reply.DynamicPayload)}");
     Console.WriteLine($"Unpacked dynamic payload: {JsonSerializer.Serialize(reply.DynamicPayload.Unpack<ChatRequest>())}");
+    */
+
+
 
     /*
      // Commented for demonstrating well-known types

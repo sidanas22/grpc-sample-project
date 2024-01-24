@@ -15,7 +15,8 @@ import "Protos/response.proto";
 package basic_grpc_service;
 
 service Chatbot {
-  rpc SendMessage (ChatRequest) returns (response.ChatReply);
+	// 
+  rpc SendMessage (ChatRequest) returns (stream response.ChatReply);
 }
 
 message ChatRequest {
