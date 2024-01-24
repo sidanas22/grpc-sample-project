@@ -27,7 +27,9 @@ message ChatReply {
   google.protobuf.DoubleValue message_size_in_megabytes = 5;
   google.protobuf.Timestamp request_received_time = 6;
   google.protobuf.Duration request_processed_duration = 7;
-  google.protobuf.Any dynamic_payload = 8;
+  google.protobuf.Any dynamic_payload = 8 [deprecated=true];
+  repeated int32 packed_numbers = 9 [packed = true];
+  optional int32 optional_field = 10;
 }
 
 

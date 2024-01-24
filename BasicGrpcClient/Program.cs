@@ -41,6 +41,7 @@ while (true)
     Console.WriteLine($"Message size in megabytes: {reply.MessageSizeInMegabytes}");
     Console.WriteLine($"Request received time: {reply.RequestReceivedTime}");
     Console.WriteLine($"Request processed duration: {reply.RequestProcessedDuration}");
+    Console.WriteLine($"Complete Reply Object: {JsonSerializer.Serialize(reply, new JsonSerializerOptions(){WriteIndented = true})}");
     Console.WriteLine($"Raw dynamic payload: {JsonSerializer.Serialize(reply.DynamicPayload)}");
     Console.WriteLine($"Unpacked dynamic payload: {JsonSerializer.Serialize(reply.DynamicPayload.Unpack<ChatRequest>())}");
 

@@ -1,13 +1,16 @@
 syntax = "proto3";
 
 option csharp_namespace = "BasicGrpcService";
+option java_package = "basicGrpcService";
+option java_outer_classname = "Chatbot";
+option java_multiple_files = true;
+option optimize_for = CODE_SIZE;
 
 import "google/protobuf/wrappers.proto";
 import "google/protobuf/duration.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/any.proto";
 import "Protos/response.proto";
-
 
 package basic_grpc_service;
 
