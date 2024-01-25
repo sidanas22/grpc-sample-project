@@ -31,7 +31,6 @@ public class TraceInterceptor : Interceptor
         DuplexStreamingServerMethod<TRequest, TResponse> continuation)
     {
         Console.WriteLine($"A {MethodType.DuplexStreaming} call received on the {context.Method}.");
-
         try
         {
             await continuation(requestStream, responseStream, context);

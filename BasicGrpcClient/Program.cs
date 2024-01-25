@@ -1,7 +1,10 @@
+using BasicGrpcClient;
 using BasicGrpcService;
 using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
+using Grpc.Core.Interceptors;
 using Grpc.Net.Client;
+using Microsoft.Extensions.Logging;
 using System.Text;
 using System.Text.Json;
 
@@ -11,8 +14,34 @@ var name = Console.ReadLine();
 Console.WriteLine($"Hello {name}. You can start chatting now.");
 Console.WriteLine("Type 'exit' to stop at any time.");
 
-using var channel = GrpcChannel.ForAddress("http://127.0.0.1:5100");
-var client = new Chatbot.ChatbotClient(channel);
+
+var options = new GrpcChannelOptions
+{
+    HttpHandler = null,
+    HttpClient = null,
+    DisposeHttpClient = false,
+    MaxSendMessageSize = null,
+    MaxReceiveMessageSize = null,
+    Credentials = null,
+    CompressionProviders = null,
+    ThrowOperationCanceledOnCancellation = false,
+    UnsafeUseInsecureChannelCallCredentials = false,
+    MaxRetryAttempts = 5,
+    MaxRetryBufferSize = null,
+    MaxRetryBufferPerCallSize = null,
+    ServiceConfig = null,
+    // Logger Factory
+    LoggerFactory = LoggerFactory.Create(logging =>
+    {
+        logging.SetMinimumLevel(LogLevel.Debug);
+    })
+};
+
+using var channel = GrpcChannel.ForAddress("http://127.0.0.1:5100", options);
+var callInvoker = channel.Intercept(new TraceInterceptor());
+
+//var client = new Chatbot.ChatbotClient(channel);
+var client = new Chatbot.ChatbotClient(callInvoker);
 
 while (true)
 {
@@ -48,7 +77,7 @@ while (true)
     */
 
     using var call = client.SendMessages();
-    
+
     var readTask = Task.Run(async () =>
     {
         await foreach (var response in call.ResponseStream.ReadAllAsync())
@@ -76,7 +105,7 @@ while (true)
     //var response = await call;
     //We do need to await readTask now
     await readTask;
-    
+
     //Console.WriteLine($"Reply: {response.Message}");
 
 
