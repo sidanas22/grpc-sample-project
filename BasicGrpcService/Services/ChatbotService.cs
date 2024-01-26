@@ -16,59 +16,54 @@ public class ChatbotService : Chatbot.ChatbotBase
         _historyStore = historyStore;
     }
 
-    public override async Task SendMessages(IAsyncStreamReader<ChatRequest> requestStream,IServerStreamWriter<ChatReply> responseStream, ServerCallContext context)
+    public override async Task SendMessage(ChatRequest request,IServerStreamWriter<ChatReply> responseStream, ServerCallContext context)
     {
         _logger.LogDebug("Message received from the client {Peer}.", context.Peer);
 
 
         var reply = new Response.ChatReply();
-        await foreach (var request in requestStream.ReadAllAsync())
+        //await foreach (var request in requestStream.ReadAllAsync())
+        //{
+
+        //}
+
+        if (request.Message.ToLower().Contains("hello") || request.Message.ToLower().Contains("came from"))
         {
+            reply.Message = $"Hello {request.Name}!";
+            reply.AnswerFound = true;
 
-            if (request.Message.ToLower().Contains("hello") || request.Message.ToLower().Contains("came from"))
-            {
-                reply.Message += $"Hello {request.Name}!";
-                reply.AnswerFound = true;
+            // commented for demonstrating well-known-types
+            //reply.AnswerType = AnswerType.Greeting;
 
-                // commented for demonstrating well-known-types
-                //reply.AnswerType = AnswerType.Greeting;
-
-                // commented for demonstrating oneof
-                //reply.ResponseType = ChatHistoryEntry.Types.ResponseType.Greeting;
-
-            }
-            else if (request.Message.ToLower().Contains("help"))
-            {
-                reply.Message += "What can I help you with today?";
-                reply.AnswerFound = true;
-                // commented for demonstrating oneof
-                //reply.AnswerType = AnswerType.Help;
-
-                // commented for demonstrating well-known-types
-                //reply.ResponseType = ChatHistoryEntry.Types.ResponseType.Assistance;
-            }
-            else
-            {
-                reply.Message += "I'm sorry, but I am unable to resolve your query.";
-                // commented for demonstrating well-known-types
-                //reply.UnknownRequest = true;
-            }
-            reply.ReplyInBytes =
-                ByteString.CopyFrom(
-                    Encoding.ASCII.GetBytes(reply.Message));
-
-            reply.MessageSizeInBytes = reply.ReplyInBytes.Length;
-            reply.MessageSizeInMegabytes = (double)reply.MessageSizeInBytes / (1024 * 1024);
-            reply.RequestReceivedTime = Timestamp.FromDateTime(DateTime.UtcNow);
-            reply.RequestProcessedDuration = reply.RequestReceivedTime - request.RequestStartTime;
-            reply.DynamicPayload = Any.Pack(request);
-
-            await responseStream.WriteAsync(reply);
+            // commented for demonstrating oneof
+            //reply.ResponseType = ChatHistoryEntry.Types.ResponseType.Greeting;
 
         }
+        else if (request.Message.ToLower().Contains("help"))
+        {
+            reply.Message += "What can I help you with today?";
+            reply.AnswerFound = true;
+            // commented for demonstrating oneof
+            //reply.AnswerType = AnswerType.Help;
 
+            // commented for demonstrating well-known-types
+            //reply.ResponseType = ChatHistoryEntry.Types.ResponseType.Assistance;
+        }
+        else
+        {
+            reply.Message = "I'm sorry, but I am unable to resolve your query.";
+            // commented for demonstrating well-known-types
+            //reply.UnknownRequest = true;
+        }
+        reply.ReplyInBytes =
+            ByteString.CopyFrom(
+                Encoding.ASCII.GetBytes(reply.Message));
 
-
+        reply.MessageSizeInBytes = reply.ReplyInBytes.Length;
+        reply.MessageSizeInMegabytes = (double)reply.MessageSizeInBytes / (1024 * 1024);
+        reply.RequestReceivedTime = Timestamp.FromDateTime(DateTime.UtcNow);
+        reply.RequestProcessedDuration = reply.RequestReceivedTime - request.RequestStartTime;
+        reply.DynamicPayload = Any.Pack(request);
 
         //foreach (var entry in _historyStore.GetHistory())
         //{
@@ -89,9 +84,9 @@ public class ChatbotService : Chatbot.ChatbotBase
         //return Task.FromResult(reply);
         //return reply;
 
-        //await responseStream.WriteAsync(reply);
-        //reply.Message = "What else can I help you with?";
-        //await responseStream.WriteAsync(reply);
+        await responseStream.WriteAsync(reply);
+        reply.Message = "What else can I help you with?";
+        await responseStream.WriteAsync(reply);
 
     }
 

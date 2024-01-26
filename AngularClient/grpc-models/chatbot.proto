@@ -1,22 +1,33 @@
+/*
+syntax = "proto3";
+
+service StreamService {
+  rpc FetchResponse (Request) returns (stream Response) {}
+}
+
+message Request {
+  int32 id = 1;
+}
+
+message Response {
+  string result = 1;
+}
+*/
+
+
 syntax = "proto3";
 
 option csharp_namespace = "BasicGrpcService";
-option java_package = "basicGrpcService";
-option java_outer_classname = "Chatbot";
-option java_multiple_files = true;
-option optimize_for = CODE_SIZE;
 
 import "google/protobuf/wrappers.proto";
 import "google/protobuf/duration.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/any.proto";
-import "Protos/response.proto";
 
 package basic_grpc_service;
 
 service Chatbot {
-  //rpc SendMessages (stream ChatRequest) returns (stream response.ChatReply);
-  rpc SendMessage (ChatRequest) returns (stream response.ChatReply);
+    rpc SendMessages (stream ChatRequest) returns (stream ChatReply);
 }
 
 message ChatRequest {
@@ -25,8 +36,28 @@ message ChatRequest {
   google.protobuf.Timestamp request_start_time = 3;
 }
 
+message ChatReply {
+  google.protobuf.StringValue message = 1;
+  google.protobuf.BoolValue answer_found = 2;
+  google.protobuf.BytesValue reply_in_bytes = 3;
+  google.protobuf.Int32Value message_size_in_bytes = 4;
+  google.protobuf.DoubleValue message_size_in_megabytes = 5;
+  google.protobuf.Timestamp request_received_time = 6;
+  google.protobuf.Duration request_processed_duration = 7;
+  google.protobuf.Any dynamic_payload = 8 [deprecated=true];
+  repeated int32 packed_numbers = 9 [packed = true];
+  optional int32 optional_field = 10;
+}
+
+
 /*
-// commented for demonstrating well-known-types
+//both commented for demonstrating well-known-types
+
+message ChatRequest {
+  string name = 1;
+  string message = 2;
+}
+
 message ChatReply {
   string message = 1;
   bool answer_found = 2;
@@ -39,8 +70,7 @@ message ChatReply {
 	  ChatHistoryEntry.ResponseType response_type = 6;
 	  bool unknown_request = 7;
   }
-  
-  //repeated NumericPayload payload =4;
+//   NumericPayload payload = 4;
 }
 */
 
@@ -61,19 +91,15 @@ message ChatReply {
 // 	sfixed64 sfixed64_demo = 12;
 // }
 
-
 message ChatHistoryEntry{
 	string request_message =1;
 	string response_message = 2;
 	enum ResponseType{
-		option allow_alias = true;
 		UNKNOWN=0;
 		HELP=1;
-		ASSISTANCE=1;
 		GREETING=2;
 	}
 }
-
 enum AnswerType {
 	UNKNOWN=0;
 	HELP=1;

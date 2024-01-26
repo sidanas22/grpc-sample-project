@@ -12,11 +12,13 @@ builder.Services.AddGrpc(options =>
     options.ResponseCompressionLevel = null;
     options.IgnoreUnknownServices = true;
     options.Interceptors.Add<TraceInterceptor>();
+    options.Interceptors.Add<LoggingInterceptor>();
 
     Console.WriteLine(options.CompressionProviders.Count);
 });
 
 builder.Services.AddSingleton<TraceInterceptor>();
+builder.Services.AddSingleton<LoggingInterceptor>();
 builder.Services.AddSingleton<IChatHistoryStore, ChatHistoryStore>();
 
 builder.Logging.ClearProviders();
@@ -39,7 +41,10 @@ builder.WebHost.ConfigureKestrel(options =>
 
 var app = builder.Build();
 
-app.MapGrpcService<ChatbotService>();
+app.UseGrpcWeb();
+
+app.MapGrpcService<ChatbotService>().EnableGrpcWeb();
+
 app.MapGet("/", () => "gRPC service is running.");
 
 app.Run();

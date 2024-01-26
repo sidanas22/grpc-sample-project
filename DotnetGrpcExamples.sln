@@ -2,9 +2,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicGrpcService", "BasicGrpcService\BasicGrpcService.csproj", "{EB2155C7-D455-4F9C-9289-6BCD90739691}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicGrpcService", "BasicGrpcService\BasicGrpcService.csproj", "{EB2155C7-D455-4F9C-9289-6BCD90739691}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicGrpcClient", "BasicGrpcClient\BasicGrpcClient.csproj", "{AA6AF42F-7CC9-4365-BADD-8E5B824CFA55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicGrpcClient", "BasicGrpcClient\BasicGrpcClient.csproj", "{AA6AF42F-7CC9-4365-BADD-8E5B824CFA55}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "AngularClient", "AngularClient\AngularClient.esproj", "{1870CB06-F19A-405D-B9C5-A0971B7CBBD1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +22,12 @@ Global
 		{AA6AF42F-7CC9-4365-BADD-8E5B824CFA55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA6AF42F-7CC9-4365-BADD-8E5B824CFA55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA6AF42F-7CC9-4365-BADD-8E5B824CFA55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1870CB06-F19A-405D-B9C5-A0971B7CBBD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1870CB06-F19A-405D-B9C5-A0971B7CBBD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1870CB06-F19A-405D-B9C5-A0971B7CBBD1}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{1870CB06-F19A-405D-B9C5-A0971B7CBBD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1870CB06-F19A-405D-B9C5-A0971B7CBBD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1870CB06-F19A-405D-B9C5-A0971B7CBBD1}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
