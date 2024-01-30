@@ -20,6 +20,7 @@ public class ChatbotService : Chatbot.ChatbotBase
     {
         _logger.LogDebug("Message received from the client {Peer}.", context.Peer);
 
+       
 
         var reply = new Response.ChatReply();
         //await foreach (var request in requestStream.ReadAllAsync())
@@ -41,7 +42,7 @@ public class ChatbotService : Chatbot.ChatbotBase
         }
         else if (request.Message.ToLower().Contains("help"))
         {
-            reply.Message += "What can I help you with today?";
+            reply.Message = "What can I help you with today?";
             reply.AnswerFound = true;
             // commented for demonstrating oneof
             //reply.AnswerType = AnswerType.Help;
@@ -84,9 +85,13 @@ public class ChatbotService : Chatbot.ChatbotBase
         //return Task.FromResult(reply);
         //return reply;
 
-        await responseStream.WriteAsync(reply);
-        reply.Message = "What else can I help you with?";
-        await responseStream.WriteAsync(reply);
+        ChatReply filteredReply = new ChatReply();
+
+        request.SampleMask.Merge(reply, filteredReply);
+
+        await responseStream.WriteAsync(filteredReply);
+        filteredReply.Message = "What else can I help you with?";
+        await responseStream.WriteAsync(filteredReply);
 
     }
 

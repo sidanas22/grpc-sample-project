@@ -10,10 +10,10 @@ var Chatbot = (function () {
   return Chatbot;
 }());
 
-Chatbot.SendMessages = {
-  methodName: "SendMessages",
+Chatbot.SendMessage = {
+  methodName: "SendMessage",
   service: Chatbot,
-  requestStream: true,
+  requestStream: false,
   responseStream: true,
   requestType: grpc_models_chatbot_pb.ChatRequest,
   responseType: grpc_models_chatbot_pb.ChatReply
@@ -26,43 +26,37 @@ function ChatbotClient(serviceHost, options) {
   this.options = options || {};
 }
 
-ChatbotClient.prototype.sendMessages = function sendMessages(metadata) {
+ChatbotClient.prototype.sendMessage = function sendMessage(requestMessage, metadata) {
   var listeners = {
     data: [],
     end: [],
     status: []
   };
-  var client = grpc.client(Chatbot.SendMessages, {
+  var client = grpc.invoke(Chatbot.SendMessage, {
+    request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
-    transport: this.options.transport
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onMessage: function (responseMessage) {
+      listeners.data.forEach(function (handler) {
+        handler(responseMessage);
+      });
+    },
+    onEnd: function (status, statusMessage, trailers) {
+      listeners.status.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners.end.forEach(function (handler) {
+        handler({ code: status, details: statusMessage, metadata: trailers });
+      });
+      listeners = null;
+    }
   });
-  client.onEnd(function (status, statusMessage, trailers) {
-    listeners.status.forEach(function (handler) {
-      handler({ code: status, details: statusMessage, metadata: trailers });
-    });
-    listeners.end.forEach(function (handler) {
-      handler({ code: status, details: statusMessage, metadata: trailers });
-    });
-    listeners = null;
-  });
-  client.onMessage(function (message) {
-    listeners.data.forEach(function (handler) {
-      handler(message);
-    })
-  });
-  client.start(metadata);
   return {
     on: function (type, handler) {
       listeners[type].push(handler);
       return this;
-    },
-    write: function (requestMessage) {
-      client.send(requestMessage);
-      return this;
-    },
-    end: function () {
-      client.finishSend();
     },
     cancel: function () {
       listeners = null;

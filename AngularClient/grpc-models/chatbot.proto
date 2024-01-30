@@ -23,17 +23,19 @@ import "google/protobuf/wrappers.proto";
 import "google/protobuf/duration.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/any.proto";
+import "google/protobuf/field_mask.proto";
 
 package basic_grpc_service;
 
 service Chatbot {
-    rpc SendMessages (stream ChatRequest) returns (stream ChatReply);
+    rpc SendMessage (ChatRequest) returns (stream ChatReply);
 }
 
 message ChatRequest {
   google.protobuf.StringValue name = 1;
   google.protobuf.StringValue message = 2;
   google.protobuf.Timestamp request_start_time = 3;
+  google.protobuf.FieldMask sample_mask =4;
 }
 
 message ChatReply {

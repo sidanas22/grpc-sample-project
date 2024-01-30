@@ -23,6 +23,8 @@ var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/time
 goog.object.extend(proto, google_protobuf_timestamp_pb);
 var google_protobuf_any_pb = require('google-protobuf/google/protobuf/any_pb.js');
 goog.object.extend(proto, google_protobuf_any_pb);
+var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js');
+goog.object.extend(proto, google_protobuf_field_mask_pb);
 goog.exportSymbol('proto.basic_grpc_service.AnswerType', null, global);
 goog.exportSymbol('proto.basic_grpc_service.ChatHistoryEntry', null, global);
 goog.exportSymbol('proto.basic_grpc_service.ChatHistoryEntry.ResponseType', null, global);
@@ -125,7 +127,8 @@ proto.basic_grpc_service.ChatRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: (f = msg.getName()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
     message: (f = msg.getMessage()) && google_protobuf_wrappers_pb.StringValue.toObject(includeInstance, f),
-    requestStartTime: (f = msg.getRequestStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    requestStartTime: (f = msg.getRequestStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    sampleMask: (f = msg.getSampleMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -176,6 +179,11 @@ proto.basic_grpc_service.ChatRequest.deserializeBinaryFromReader = function(msg,
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setRequestStartTime(value);
+      break;
+    case 4:
+      var value = new google_protobuf_field_mask_pb.FieldMask;
+      reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
+      msg.setSampleMask(value);
       break;
     default:
       reader.skipField();
@@ -228,6 +236,14 @@ proto.basic_grpc_service.ChatRequest.serializeBinaryToWriter = function(message,
       3,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getSampleMask();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
     );
   }
 };
@@ -341,6 +357,43 @@ proto.basic_grpc_service.ChatRequest.prototype.clearRequestStartTime = function(
  */
 proto.basic_grpc_service.ChatRequest.prototype.hasRequestStartTime = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional google.protobuf.FieldMask sample_mask = 4;
+ * @return {?proto.google.protobuf.FieldMask}
+ */
+proto.basic_grpc_service.ChatRequest.prototype.getSampleMask = function() {
+  return /** @type{?proto.google.protobuf.FieldMask} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 4));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.FieldMask|undefined} value
+ * @return {!proto.basic_grpc_service.ChatRequest} returns this
+*/
+proto.basic_grpc_service.ChatRequest.prototype.setSampleMask = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.basic_grpc_service.ChatRequest} returns this
+ */
+proto.basic_grpc_service.ChatRequest.prototype.clearSampleMask = function() {
+  return this.setSampleMask(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.basic_grpc_service.ChatRequest.prototype.hasSampleMask = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 

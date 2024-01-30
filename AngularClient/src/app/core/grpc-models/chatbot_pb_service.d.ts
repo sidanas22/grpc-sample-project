@@ -4,10 +4,10 @@
 import * as grpc_models_chatbot_pb from "../grpc-models/chatbot_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
-type ChatbotSendMessages = {
+type ChatbotSendMessage = {
   readonly methodName: string;
   readonly service: typeof Chatbot;
-  readonly requestStream: true;
+  readonly requestStream: false;
   readonly responseStream: true;
   readonly requestType: typeof grpc_models_chatbot_pb.ChatRequest;
   readonly responseType: typeof grpc_models_chatbot_pb.ChatReply;
@@ -15,7 +15,7 @@ type ChatbotSendMessages = {
 
 export class Chatbot {
   static readonly serviceName: string;
-  static readonly SendMessages: ChatbotSendMessages;
+  static readonly SendMessage: ChatbotSendMessage;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -50,6 +50,6 @@ export class ChatbotClient {
   readonly serviceHost: string;
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);
-  sendMessages(metadata?: grpc.Metadata): BidirectionalStream<grpc_models_chatbot_pb.ChatRequest, grpc_models_chatbot_pb.ChatReply>;
+  sendMessage(requestMessage: grpc_models_chatbot_pb.ChatRequest, metadata?: grpc.Metadata): ResponseStream<grpc_models_chatbot_pb.ChatReply>;
 }
 

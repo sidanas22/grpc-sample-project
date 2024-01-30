@@ -6,6 +6,7 @@ import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wr
 import * as google_protobuf_duration_pb from "google-protobuf/google/protobuf/duration_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 import * as google_protobuf_any_pb from "google-protobuf/google/protobuf/any_pb";
+import * as google_protobuf_field_mask_pb from "google-protobuf/google/protobuf/field_mask_pb";
 
 export class ChatRequest extends jspb.Message {
   hasName(): boolean;
@@ -23,6 +24,11 @@ export class ChatRequest extends jspb.Message {
   getRequestStartTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setRequestStartTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  hasSampleMask(): boolean;
+  clearSampleMask(): void;
+  getSampleMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setSampleMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ChatRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ChatRequest): ChatRequest.AsObject;
@@ -38,6 +44,7 @@ export namespace ChatRequest {
     name?: google_protobuf_wrappers_pb.StringValue.AsObject,
     message?: google_protobuf_wrappers_pb.StringValue.AsObject,
     requestStartTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    sampleMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 
