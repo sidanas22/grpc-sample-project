@@ -25,28 +25,27 @@ namespace BasicGrpcService {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChRQcm90b3MvY2hhdGJvdC5wcm90bxISYmFzaWNfZ3JwY19zZXJ2aWNlGh5n",
-            "b29nbGUvcHJvdG9idWYvd3JhcHBlcnMucHJvdG8iaAoLQ2hhdFJlcXVlc3QS",
-            "KgoEbmFtZRgBIAEoCzIcLmdvb2dsZS5wcm90b2J1Zi5TdHJpbmdWYWx1ZRIt",
-            "CgdtZXNzYWdlGAIgASgLMhwuZ29vZ2xlLnByb3RvYnVmLlN0cmluZ1ZhbHVl",
-            "Ip4CCglDaGF0UmVwbHkSLQoHbWVzc2FnZRgBIAEoCzIcLmdvb2dsZS5wcm90",
-            "b2J1Zi5TdHJpbmdWYWx1ZRIwCgxhbnN3ZXJfZm91bmQYAiABKAsyGi5nb29n",
-            "bGUucHJvdG9idWYuQm9vbFZhbHVlEjMKDnJlcGx5X2luX2J5dGVzGAMgASgL",
-            "MhsuZ29vZ2xlLnByb3RvYnVmLkJ5dGVzVmFsdWUSOgoVbWVzc2FnZV9zaXpl",
-            "X2luX2J5dGVzGAQgASgLMhsuZ29vZ2xlLnByb3RvYnVmLkludDMyVmFsdWUS",
-            "PwoZbWVzc2FnZV9zaXplX2luX21lZ2FieXRlcxgFIAEoCzIcLmdvb2dsZS5w",
-            "cm90b2J1Zi5Eb3VibGVWYWx1ZSKOAQoQQ2hhdEhpc3RvcnlFbnRyeRIXCg9y",
-            "ZXF1ZXN0X21lc3NhZ2UYASABKAkSGAoQcmVzcG9uc2VfbWVzc2FnZRgCIAEo",
-            "CSJHCgxSZXNwb25zZVR5cGUSCwoHVU5LTk9XThAAEggKBEhFTFAQARIOCgpB",
-            "U1NJU1RBTkNFEAESDAoIR1JFRVRJTkcQAhoCEAEqMQoKQW5zd2VyVHlwZRIL",
-            "CgdVTktOT1dOEAASCAoESEVMUBABEgwKCEdSRUVUSU5HEAIyWAoHQ2hhdGJv",
-            "dBJNCgtTZW5kTWVzc2FnZRIfLmJhc2ljX2dycGNfc2VydmljZS5DaGF0UmVx",
-            "dWVzdBodLmJhc2ljX2dycGNfc2VydmljZS5DaGF0UmVwbHlCE6oCEEJhc2lj",
-            "R3JwY1NlcnZpY2ViBnByb3RvMw=="));
+            "b29nbGUvcHJvdG9idWYvd3JhcHBlcnMucHJvdG8aHmdvb2dsZS9wcm90b2J1",
+            "Zi9kdXJhdGlvbi5wcm90bxofZ29vZ2xlL3Byb3RvYnVmL3RpbWVzdGFtcC5w",
+            "cm90bxoZZ29vZ2xlL3Byb3RvYnVmL2FueS5wcm90bxoVUHJvdG9zL3Jlc3Bv",
+            "bnNlLnByb3RvGiBnb29nbGUvcHJvdG9idWYvZmllbGRfbWFzay5wcm90byLR",
+            "AQoLQ2hhdFJlcXVlc3QSKgoEbmFtZRgBIAEoCzIcLmdvb2dsZS5wcm90b2J1",
+            "Zi5TdHJpbmdWYWx1ZRItCgdtZXNzYWdlGAIgASgLMhwuZ29vZ2xlLnByb3Rv",
+            "YnVmLlN0cmluZ1ZhbHVlEjYKEnJlcXVlc3Rfc3RhcnRfdGltZRgDIAEoCzIa",
+            "Lmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASLwoLc2FtcGxlX21hc2sYBCAB",
+            "KAsyGi5nb29nbGUucHJvdG9idWYuRmllbGRNYXNrIo4BChBDaGF0SGlzdG9y",
+            "eUVudHJ5EhcKD3JlcXVlc3RfbWVzc2FnZRgBIAEoCRIYChByZXNwb25zZV9t",
+            "ZXNzYWdlGAIgASgJIkcKDFJlc3BvbnNlVHlwZRILCgdVTktOT1dOEAASCAoE",
+            "SEVMUBABEg4KCkFTU0lTVEFOQ0UQARIMCghHUkVFVElORxACGgIQASoxCgpB",
+            "bnN3ZXJUeXBlEgsKB1VOS05PV04QABIICgRIRUxQEAESDAoIR1JFRVRJTkcQ",
+            "AjJQCgdDaGF0Ym90EkUKC1NlbmRNZXNzYWdlEh8uYmFzaWNfZ3JwY19zZXJ2",
+            "aWNlLkNoYXRSZXF1ZXN0GhMucmVzcG9uc2UuQ2hhdFJlcGx5MAFCMgoQYmFz",
+            "aWNHcnBjU2VydmljZUIHQ2hhdGJvdEgCUAGqAhBCYXNpY0dycGNTZXJ2aWNl",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, global::Response.ResponseReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.FieldMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::BasicGrpcService.AnswerType), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::BasicGrpcService.ChatRequest), global::BasicGrpcService.ChatRequest.Parser, new[]{ "Name", "Message" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::BasicGrpcService.ChatReply), global::BasicGrpcService.ChatReply.Parser, new[]{ "Message", "AnswerFound", "ReplyInBytes", "MessageSizeInBytes", "MessageSizeInMegabytes" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::BasicGrpcService.ChatRequest), global::BasicGrpcService.ChatRequest.Parser, new[]{ "Name", "Message", "RequestStartTime", "SampleMask" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::BasicGrpcService.ChatHistoryEntry), global::BasicGrpcService.ChatHistoryEntry.Parser, new[]{ "RequestMessage", "ResponseMessage" }, null, new[]{ typeof(global::BasicGrpcService.ChatHistoryEntry.Types.ResponseType) }, null, null)
           }));
     }
@@ -63,14 +62,6 @@ namespace BasicGrpcService {
   #endregion
 
   #region Messages
-  /// <summary>
-  ///
-  ///// commented for demonstrating well-known-types
-  ///message ChatRequest {
-  ///string name = 1;
-  ///string message = 2;
-  ///}
-  /// </summary>
   public sealed partial class ChatRequest : pb::IMessage<ChatRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -102,6 +93,8 @@ namespace BasicGrpcService {
     public ChatRequest(ChatRequest other) : this() {
       Name = other.Name;
       Message = other.Message;
+      requestStartTime_ = other.requestStartTime_ != null ? other.requestStartTime_.Clone() : null;
+      sampleMask_ = other.sampleMask_ != null ? other.sampleMask_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -136,6 +129,28 @@ namespace BasicGrpcService {
     }
 
 
+    /// <summary>Field number for the "request_start_time" field.</summary>
+    public const int RequestStartTimeFieldNumber = 3;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp requestStartTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp RequestStartTime {
+      get { return requestStartTime_; }
+      set {
+        requestStartTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "sample_mask" field.</summary>
+    public const int SampleMaskFieldNumber = 4;
+    private global::Google.Protobuf.WellKnownTypes.FieldMask sampleMask_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Protobuf.WellKnownTypes.FieldMask SampleMask {
+      get { return sampleMask_; }
+      set {
+        sampleMask_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as ChatRequest);
@@ -151,6 +166,8 @@ namespace BasicGrpcService {
       }
       if (Name != other.Name) return false;
       if (Message != other.Message) return false;
+      if (!object.Equals(RequestStartTime, other.RequestStartTime)) return false;
+      if (!object.Equals(SampleMask, other.SampleMask)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -159,6 +176,8 @@ namespace BasicGrpcService {
       int hash = 1;
       if (name_ != null) hash ^= Name.GetHashCode();
       if (message_ != null) hash ^= Message.GetHashCode();
+      if (requestStartTime_ != null) hash ^= RequestStartTime.GetHashCode();
+      if (sampleMask_ != null) hash ^= SampleMask.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -181,6 +200,14 @@ namespace BasicGrpcService {
       if (message_ != null) {
         _single_message_codec.WriteTagAndValue(output, Message);
       }
+      if (requestStartTime_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(RequestStartTime);
+      }
+      if (sampleMask_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(SampleMask);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -196,6 +223,14 @@ namespace BasicGrpcService {
       if (message_ != null) {
         _single_message_codec.WriteTagAndValue(ref output, Message);
       }
+      if (requestStartTime_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(RequestStartTime);
+      }
+      if (sampleMask_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(SampleMask);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -210,6 +245,12 @@ namespace BasicGrpcService {
       }
       if (message_ != null) {
         size += _single_message_codec.CalculateSizeWithTag(Message);
+      }
+      if (requestStartTime_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(RequestStartTime);
+      }
+      if (sampleMask_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SampleMask);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -231,6 +272,18 @@ namespace BasicGrpcService {
         if (message_ == null || other.Message != "") {
           Message = other.Message;
         }
+      }
+      if (other.requestStartTime_ != null) {
+        if (requestStartTime_ == null) {
+          RequestStartTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        RequestStartTime.MergeFrom(other.RequestStartTime);
+      }
+      if (other.sampleMask_ != null) {
+        if (sampleMask_ == null) {
+          SampleMask = new global::Google.Protobuf.WellKnownTypes.FieldMask();
+        }
+        SampleMask.MergeFrom(other.SampleMask);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -258,6 +311,20 @@ namespace BasicGrpcService {
             if (message_ == null || value != "") {
               Message = value;
             }
+            break;
+          }
+          case 26: {
+            if (requestStartTime_ == null) {
+              RequestStartTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(RequestStartTime);
+            break;
+          }
+          case 34: {
+            if (sampleMask_ == null) {
+              SampleMask = new global::Google.Protobuf.WellKnownTypes.FieldMask();
+            }
+            input.ReadMessage(SampleMask);
             break;
           }
         }
@@ -288,360 +355,18 @@ namespace BasicGrpcService {
             }
             break;
           }
-        }
-      }
-    }
-    #endif
-
-  }
-
-  public sealed partial class ChatReply : pb::IMessage<ChatReply>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
-    private static readonly pb::MessageParser<ChatReply> _parser = new pb::MessageParser<ChatReply>(() => new ChatReply());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<ChatReply> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::BasicGrpcService.ChatbotReflection.Descriptor.MessageTypes[1]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ChatReply() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ChatReply(ChatReply other) : this() {
-      Message = other.Message;
-      AnswerFound = other.AnswerFound;
-      ReplyInBytes = other.ReplyInBytes;
-      MessageSizeInBytes = other.MessageSizeInBytes;
-      MessageSizeInMegabytes = other.MessageSizeInMegabytes;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ChatReply Clone() {
-      return new ChatReply(this);
-    }
-
-    /// <summary>Field number for the "message" field.</summary>
-    public const int MessageFieldNumber = 1;
-    private static readonly pb::FieldCodec<string> _single_message_codec = pb::FieldCodec.ForClassWrapper<string>(10);
-    private string message_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Message {
-      get { return message_; }
-      set {
-        message_ = value;
-      }
-    }
-
-
-    /// <summary>Field number for the "answer_found" field.</summary>
-    public const int AnswerFoundFieldNumber = 2;
-    private static readonly pb::FieldCodec<bool?> _single_answerFound_codec = pb::FieldCodec.ForStructWrapper<bool>(18);
-    private bool? answerFound_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool? AnswerFound {
-      get { return answerFound_; }
-      set {
-        answerFound_ = value;
-      }
-    }
-
-
-    /// <summary>Field number for the "reply_in_bytes" field.</summary>
-    public const int ReplyInBytesFieldNumber = 3;
-    private static readonly pb::FieldCodec<pb::ByteString> _single_replyInBytes_codec = pb::FieldCodec.ForClassWrapper<pb::ByteString>(26);
-    private pb::ByteString replyInBytes_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pb::ByteString ReplyInBytes {
-      get { return replyInBytes_; }
-      set {
-        replyInBytes_ = value;
-      }
-    }
-
-
-    /// <summary>Field number for the "message_size_in_bytes" field.</summary>
-    public const int MessageSizeInBytesFieldNumber = 4;
-    private static readonly pb::FieldCodec<int?> _single_messageSizeInBytes_codec = pb::FieldCodec.ForStructWrapper<int>(34);
-    private int? messageSizeInBytes_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int? MessageSizeInBytes {
-      get { return messageSizeInBytes_; }
-      set {
-        messageSizeInBytes_ = value;
-      }
-    }
-
-
-    /// <summary>Field number for the "message_size_in_megabytes" field.</summary>
-    public const int MessageSizeInMegabytesFieldNumber = 5;
-    private static readonly pb::FieldCodec<double?> _single_messageSizeInMegabytes_codec = pb::FieldCodec.ForStructWrapper<double>(42);
-    private double? messageSizeInMegabytes_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public double? MessageSizeInMegabytes {
-      get { return messageSizeInMegabytes_; }
-      set {
-        messageSizeInMegabytes_ = value;
-      }
-    }
-
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as ChatReply);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(ChatReply other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (Message != other.Message) return false;
-      if (AnswerFound != other.AnswerFound) return false;
-      if (ReplyInBytes != other.ReplyInBytes) return false;
-      if (MessageSizeInBytes != other.MessageSizeInBytes) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseNullableDoubleEqualityComparer.Equals(MessageSizeInMegabytes, other.MessageSizeInMegabytes)) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (message_ != null) hash ^= Message.GetHashCode();
-      if (answerFound_ != null) hash ^= AnswerFound.GetHashCode();
-      if (replyInBytes_ != null) hash ^= ReplyInBytes.GetHashCode();
-      if (messageSizeInBytes_ != null) hash ^= MessageSizeInBytes.GetHashCode();
-      if (messageSizeInMegabytes_ != null) hash ^= pbc::ProtobufEqualityComparers.BitwiseNullableDoubleEqualityComparer.GetHashCode(MessageSizeInMegabytes);
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
-      if (message_ != null) {
-        _single_message_codec.WriteTagAndValue(output, Message);
-      }
-      if (answerFound_ != null) {
-        _single_answerFound_codec.WriteTagAndValue(output, AnswerFound);
-      }
-      if (replyInBytes_ != null) {
-        _single_replyInBytes_codec.WriteTagAndValue(output, ReplyInBytes);
-      }
-      if (messageSizeInBytes_ != null) {
-        _single_messageSizeInBytes_codec.WriteTagAndValue(output, MessageSizeInBytes);
-      }
-      if (messageSizeInMegabytes_ != null) {
-        _single_messageSizeInMegabytes_codec.WriteTagAndValue(output, MessageSizeInMegabytes);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (message_ != null) {
-        _single_message_codec.WriteTagAndValue(ref output, Message);
-      }
-      if (answerFound_ != null) {
-        _single_answerFound_codec.WriteTagAndValue(ref output, AnswerFound);
-      }
-      if (replyInBytes_ != null) {
-        _single_replyInBytes_codec.WriteTagAndValue(ref output, ReplyInBytes);
-      }
-      if (messageSizeInBytes_ != null) {
-        _single_messageSizeInBytes_codec.WriteTagAndValue(ref output, MessageSizeInBytes);
-      }
-      if (messageSizeInMegabytes_ != null) {
-        _single_messageSizeInMegabytes_codec.WriteTagAndValue(ref output, MessageSizeInMegabytes);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (message_ != null) {
-        size += _single_message_codec.CalculateSizeWithTag(Message);
-      }
-      if (answerFound_ != null) {
-        size += _single_answerFound_codec.CalculateSizeWithTag(AnswerFound);
-      }
-      if (replyInBytes_ != null) {
-        size += _single_replyInBytes_codec.CalculateSizeWithTag(ReplyInBytes);
-      }
-      if (messageSizeInBytes_ != null) {
-        size += _single_messageSizeInBytes_codec.CalculateSizeWithTag(MessageSizeInBytes);
-      }
-      if (messageSizeInMegabytes_ != null) {
-        size += _single_messageSizeInMegabytes_codec.CalculateSizeWithTag(MessageSizeInMegabytes);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(ChatReply other) {
-      if (other == null) {
-        return;
-      }
-      if (other.message_ != null) {
-        if (message_ == null || other.Message != "") {
-          Message = other.Message;
-        }
-      }
-      if (other.answerFound_ != null) {
-        if (answerFound_ == null || other.AnswerFound != false) {
-          AnswerFound = other.AnswerFound;
-        }
-      }
-      if (other.replyInBytes_ != null) {
-        if (replyInBytes_ == null || other.ReplyInBytes != pb::ByteString.Empty) {
-          ReplyInBytes = other.ReplyInBytes;
-        }
-      }
-      if (other.messageSizeInBytes_ != null) {
-        if (messageSizeInBytes_ == null || other.MessageSizeInBytes != 0) {
-          MessageSizeInBytes = other.MessageSizeInBytes;
-        }
-      }
-      if (other.messageSizeInMegabytes_ != null) {
-        if (messageSizeInMegabytes_ == null || other.MessageSizeInMegabytes != 0D) {
-          MessageSizeInMegabytes = other.MessageSizeInMegabytes;
-        }
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            string value = _single_message_codec.Read(input);
-            if (message_ == null || value != "") {
-              Message = value;
-            }
-            break;
-          }
-          case 18: {
-            bool? value = _single_answerFound_codec.Read(input);
-            if (answerFound_ == null || value != false) {
-              AnswerFound = value;
-            }
-            break;
-          }
           case 26: {
-            pb::ByteString value = _single_replyInBytes_codec.Read(input);
-            if (replyInBytes_ == null || value != pb::ByteString.Empty) {
-              ReplyInBytes = value;
+            if (requestStartTime_ == null) {
+              RequestStartTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
+            input.ReadMessage(RequestStartTime);
             break;
           }
           case 34: {
-            int? value = _single_messageSizeInBytes_codec.Read(input);
-            if (messageSizeInBytes_ == null || value != 0) {
-              MessageSizeInBytes = value;
+            if (sampleMask_ == null) {
+              SampleMask = new global::Google.Protobuf.WellKnownTypes.FieldMask();
             }
-            break;
-          }
-          case 42: {
-            double? value = _single_messageSizeInMegabytes_codec.Read(input);
-            if (messageSizeInMegabytes_ == null || value != 0D) {
-              MessageSizeInMegabytes = value;
-            }
-            break;
-          }
-        }
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 10: {
-            string value = _single_message_codec.Read(ref input);
-            if (message_ == null || value != "") {
-              Message = value;
-            }
-            break;
-          }
-          case 18: {
-            bool? value = _single_answerFound_codec.Read(ref input);
-            if (answerFound_ == null || value != false) {
-              AnswerFound = value;
-            }
-            break;
-          }
-          case 26: {
-            pb::ByteString value = _single_replyInBytes_codec.Read(ref input);
-            if (replyInBytes_ == null || value != pb::ByteString.Empty) {
-              ReplyInBytes = value;
-            }
-            break;
-          }
-          case 34: {
-            int? value = _single_messageSizeInBytes_codec.Read(ref input);
-            if (messageSizeInBytes_ == null || value != 0) {
-              MessageSizeInBytes = value;
-            }
-            break;
-          }
-          case 42: {
-            double? value = _single_messageSizeInMegabytes_codec.Read(ref input);
-            if (messageSizeInMegabytes_ == null || value != 0D) {
-              MessageSizeInMegabytes = value;
-            }
+            input.ReadMessage(SampleMask);
             break;
           }
         }
@@ -663,7 +388,7 @@ namespace BasicGrpcService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::BasicGrpcService.ChatbotReflection.Descriptor.MessageTypes[2]; }
+      get { return global::BasicGrpcService.ChatbotReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

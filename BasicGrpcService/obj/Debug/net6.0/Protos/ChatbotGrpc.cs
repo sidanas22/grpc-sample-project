@@ -48,15 +48,15 @@ namespace BasicGrpcService {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::BasicGrpcService.ChatRequest> __Marshaller_basic_grpc_service_ChatRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::BasicGrpcService.ChatRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::BasicGrpcService.ChatReply> __Marshaller_basic_grpc_service_ChatReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::BasicGrpcService.ChatReply.Parser));
+    static readonly grpc::Marshaller<global::Response.ChatReply> __Marshaller_response_ChatReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Response.ChatReply.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::BasicGrpcService.ChatRequest, global::BasicGrpcService.ChatReply> __Method_SendMessage = new grpc::Method<global::BasicGrpcService.ChatRequest, global::BasicGrpcService.ChatReply>(
-        grpc::MethodType.Unary,
+    static readonly grpc::Method<global::BasicGrpcService.ChatRequest, global::Response.ChatReply> __Method_SendMessage = new grpc::Method<global::BasicGrpcService.ChatRequest, global::Response.ChatReply>(
+        grpc::MethodType.ServerStreaming,
         __ServiceName,
         "SendMessage",
         __Marshaller_basic_grpc_service_ChatRequest,
-        __Marshaller_basic_grpc_service_ChatReply);
+        __Marshaller_response_ChatReply);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -68,8 +68,15 @@ namespace BasicGrpcService {
     [grpc::BindServiceMethod(typeof(Chatbot), "BindService")]
     public abstract partial class ChatbotBase
     {
+      /// <summary>
+      ///rpc SendMessages (stream ChatRequest) returns (stream response.ChatReply);
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="responseStream">Used for sending responses back to the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>A task indicating completion of the handler.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::BasicGrpcService.ChatReply> SendMessage(global::BasicGrpcService.ChatRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task SendMessage(global::BasicGrpcService.ChatRequest request, grpc::IServerStreamWriter<global::Response.ChatReply> responseStream, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -92,7 +99,7 @@ namespace BasicGrpcService {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public static void BindService(grpc::ServiceBinderBase serviceBinder, ChatbotBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_SendMessage, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::BasicGrpcService.ChatRequest, global::BasicGrpcService.ChatReply>(serviceImpl.SendMessage));
+      serviceBinder.AddMethod(__Method_SendMessage, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::BasicGrpcService.ChatRequest, global::Response.ChatReply>(serviceImpl.SendMessage));
     }
 
   }

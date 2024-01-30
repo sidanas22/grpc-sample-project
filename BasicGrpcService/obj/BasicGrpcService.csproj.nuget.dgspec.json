@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\muhammad.anas\\Downloads\\grpc-sample-project\\grpc-sample-project\\BasicGrpcService\\BasicGrpcService.csproj": {}
+    "D:\\Practice\\grpc-sample-project\\BasicGrpcService\\BasicGrpcService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\muhammad.anas\\Downloads\\grpc-sample-project\\grpc-sample-project\\BasicGrpcService\\BasicGrpcService.csproj": {
+    "D:\\Practice\\grpc-sample-project\\BasicGrpcService\\BasicGrpcService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\muhammad.anas\\Downloads\\grpc-sample-project\\grpc-sample-project\\BasicGrpcService\\BasicGrpcService.csproj",
+        "projectUniqueName": "D:\\Practice\\grpc-sample-project\\BasicGrpcService\\BasicGrpcService.csproj",
         "projectName": "BasicGrpcService",
-        "projectPath": "C:\\Users\\muhammad.anas\\Downloads\\grpc-sample-project\\grpc-sample-project\\BasicGrpcService\\BasicGrpcService.csproj",
+        "projectPath": "D:\\Practice\\grpc-sample-project\\BasicGrpcService\\BasicGrpcService.csproj",
         "packagesPath": "C:\\Users\\muhammad.anas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\muhammad.anas\\Downloads\\grpc-sample-project\\grpc-sample-project\\BasicGrpcService\\obj\\",
+        "outputPath": "D:\\Practice\\grpc-sample-project\\BasicGrpcService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,9 +44,21 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Google.Protobuf": {
+              "target": "Package",
+              "version": "[3.25.2, )"
+            },
             "Grpc.AspNetCore": {
               "target": "Package",
               "version": "[2.40.0, )"
+            },
+            "Grpc.AspNetCore.Web": {
+              "target": "Package",
+              "version": "[2.60.0, )"
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             }
           },
           "imports": [

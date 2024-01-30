@@ -51,10 +51,10 @@ namespace BasicGrpcService {
     static readonly grpc::Marshaller<global::BasicGrpcService.ChatReply> __Marshaller_basic_grpc_service_ChatReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::BasicGrpcService.ChatReply.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::BasicGrpcService.ChatRequest, global::BasicGrpcService.ChatReply> __Method_SendMessage = new grpc::Method<global::BasicGrpcService.ChatRequest, global::BasicGrpcService.ChatReply>(
-        grpc::MethodType.Unary,
+    static readonly grpc::Method<global::BasicGrpcService.ChatRequest, global::BasicGrpcService.ChatReply> __Method_SendMessages = new grpc::Method<global::BasicGrpcService.ChatRequest, global::BasicGrpcService.ChatReply>(
+        grpc::MethodType.DuplexStreaming,
         __ServiceName,
-        "SendMessage",
+        "SendMessages",
         __Marshaller_basic_grpc_service_ChatRequest,
         __Marshaller_basic_grpc_service_ChatReply);
 
@@ -92,24 +92,14 @@ namespace BasicGrpcService {
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::BasicGrpcService.ChatReply SendMessage(global::BasicGrpcService.ChatRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncDuplexStreamingCall<global::BasicGrpcService.ChatRequest, global::BasicGrpcService.ChatReply> SendMessages(grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        return SendMessage(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+        return SendMessages(new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::BasicGrpcService.ChatReply SendMessage(global::BasicGrpcService.ChatRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncDuplexStreamingCall<global::BasicGrpcService.ChatRequest, global::BasicGrpcService.ChatReply> SendMessages(grpc::CallOptions options)
       {
-        return CallInvoker.BlockingUnaryCall(__Method_SendMessage, null, options, request);
-      }
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::BasicGrpcService.ChatReply> SendMessageAsync(global::BasicGrpcService.ChatRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-      {
-        return SendMessageAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
-      }
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::BasicGrpcService.ChatReply> SendMessageAsync(global::BasicGrpcService.ChatRequest request, grpc::CallOptions options)
-      {
-        return CallInvoker.AsyncUnaryCall(__Method_SendMessage, null, options, request);
+        return CallInvoker.AsyncDuplexStreamingCall(__Method_SendMessages, null, options);
       }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]

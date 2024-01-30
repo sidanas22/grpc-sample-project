@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\muhammad.anas\\Downloads\\grpc-sample-project\\grpc-sample-project\\BasicGrpcClient\\BasicGrpcClient.csproj": {}
+    "D:\\Practice\\grpc-sample-project\\BasicGrpcClient\\BasicGrpcClient.csproj": {}
   },
   "projects": {
-    "C:\\Users\\muhammad.anas\\Downloads\\grpc-sample-project\\grpc-sample-project\\BasicGrpcClient\\BasicGrpcClient.csproj": {
+    "D:\\Practice\\grpc-sample-project\\BasicGrpcClient\\BasicGrpcClient.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\muhammad.anas\\Downloads\\grpc-sample-project\\grpc-sample-project\\BasicGrpcClient\\BasicGrpcClient.csproj",
+        "projectUniqueName": "D:\\Practice\\grpc-sample-project\\BasicGrpcClient\\BasicGrpcClient.csproj",
         "projectName": "BasicGrpcClient",
-        "projectPath": "C:\\Users\\muhammad.anas\\Downloads\\grpc-sample-project\\grpc-sample-project\\BasicGrpcClient\\BasicGrpcClient.csproj",
+        "projectPath": "D:\\Practice\\grpc-sample-project\\BasicGrpcClient\\BasicGrpcClient.csproj",
         "packagesPath": "C:\\Users\\muhammad.anas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\muhammad.anas\\Downloads\\grpc-sample-project\\grpc-sample-project\\BasicGrpcClient\\obj\\",
+        "outputPath": "D:\\Practice\\grpc-sample-project\\BasicGrpcClient\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -46,7 +46,7 @@
           "dependencies": {
             "Google.Protobuf": {
               "target": "Package",
-              "version": "[3.21.5, )"
+              "version": "[3.25.2, )"
             },
             "Grpc.Net.Client": {
               "target": "Package",
@@ -57,6 +57,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.48.1, )"
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             }
           },
           "imports": [

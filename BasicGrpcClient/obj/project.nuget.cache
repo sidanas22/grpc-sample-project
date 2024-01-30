@@ -1,16 +1,22 @@
 {
   "version": 2,
-  "dgSpecHash": "lGcxRT4nnjWLq1gyHTfVq8ZKw9Yc2p4n37lSKarGuMC95bdTSrUPFEj80xjnK++MYsvSOXEoClAzIMeX8m+PAQ==",
+  "dgSpecHash": "gtsqisINE6EEDPWz0I28n5m8WWEGi/EW5PbIgprTFy69bPcDpcvxLfBJHwEdRVDGUr0OCZ79N48woW2SHuPddA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\muhammad.anas\\Downloads\\grpc-sample-project\\grpc-sample-project\\BasicGrpcClient\\BasicGrpcClient.csproj",
+  "projectFilePath": "D:\\Practice\\grpc-sample-project\\BasicGrpcClient\\BasicGrpcClient.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\muhammad.anas\\.nuget\\packages\\google.protobuf\\3.21.5\\google.protobuf.3.21.5.nupkg.sha512",
+    "C:\\Users\\muhammad.anas\\.nuget\\packages\\google.protobuf\\3.25.2\\google.protobuf.3.25.2.nupkg.sha512",
     "C:\\Users\\muhammad.anas\\.nuget\\packages\\grpc.core.api\\2.48.0\\grpc.core.api.2.48.0.nupkg.sha512",
     "C:\\Users\\muhammad.anas\\.nuget\\packages\\grpc.net.client\\2.48.0\\grpc.net.client.2.48.0.nupkg.sha512",
     "C:\\Users\\muhammad.anas\\.nuget\\packages\\grpc.net.common\\2.48.0\\grpc.net.common.2.48.0.nupkg.sha512",
     "C:\\Users\\muhammad.anas\\.nuget\\packages\\grpc.tools\\2.48.1\\grpc.tools.2.48.1.nupkg.sha512",
-    "C:\\Users\\muhammad.anas\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.0.3\\microsoft.extensions.logging.abstractions.3.0.3.nupkg.sha512",
-    "C:\\Users\\muhammad.anas\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
+    "C:\\Users\\muhammad.anas\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\8.0.0\\microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
+    "C:\\Users\\muhammad.anas\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\muhammad.anas\\.nuget\\packages\\microsoft.extensions.logging\\8.0.0\\microsoft.extensions.logging.8.0.0.nupkg.sha512",
+    "C:\\Users\\muhammad.anas\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\muhammad.anas\\.nuget\\packages\\microsoft.extensions.options\\8.0.0\\microsoft.extensions.options.8.0.0.nupkg.sha512",
+    "C:\\Users\\muhammad.anas\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "C:\\Users\\muhammad.anas\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
+    "C:\\Users\\muhammad.anas\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }

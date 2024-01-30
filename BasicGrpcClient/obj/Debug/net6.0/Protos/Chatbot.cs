@@ -25,27 +25,36 @@ namespace BasicGrpcService {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChRQcm90b3MvY2hhdGJvdC5wcm90bxISYmFzaWNfZ3JwY19zZXJ2aWNlGh5n",
-            "b29nbGUvcHJvdG9idWYvd3JhcHBlcnMucHJvdG8iaAoLQ2hhdFJlcXVlc3QS",
-            "KgoEbmFtZRgBIAEoCzIcLmdvb2dsZS5wcm90b2J1Zi5TdHJpbmdWYWx1ZRIt",
-            "CgdtZXNzYWdlGAIgASgLMhwuZ29vZ2xlLnByb3RvYnVmLlN0cmluZ1ZhbHVl",
-            "Ip4CCglDaGF0UmVwbHkSLQoHbWVzc2FnZRgBIAEoCzIcLmdvb2dsZS5wcm90",
-            "b2J1Zi5TdHJpbmdWYWx1ZRIwCgxhbnN3ZXJfZm91bmQYAiABKAsyGi5nb29n",
-            "bGUucHJvdG9idWYuQm9vbFZhbHVlEjMKDnJlcGx5X2luX2J5dGVzGAMgASgL",
-            "MhsuZ29vZ2xlLnByb3RvYnVmLkJ5dGVzVmFsdWUSOgoVbWVzc2FnZV9zaXpl",
-            "X2luX2J5dGVzGAQgASgLMhsuZ29vZ2xlLnByb3RvYnVmLkludDMyVmFsdWUS",
-            "PwoZbWVzc2FnZV9zaXplX2luX21lZ2FieXRlcxgFIAEoCzIcLmdvb2dsZS5w",
-            "cm90b2J1Zi5Eb3VibGVWYWx1ZSJ6ChBDaGF0SGlzdG9yeUVudHJ5EhcKD3Jl",
-            "cXVlc3RfbWVzc2FnZRgBIAEoCRIYChByZXNwb25zZV9tZXNzYWdlGAIgASgJ",
-            "IjMKDFJlc3BvbnNlVHlwZRILCgdVTktOT1dOEAASCAoESEVMUBABEgwKCEdS",
-            "RUVUSU5HEAIqMQoKQW5zd2VyVHlwZRILCgdVTktOT1dOEAASCAoESEVMUBAB",
-            "EgwKCEdSRUVUSU5HEAIyWAoHQ2hhdGJvdBJNCgtTZW5kTWVzc2FnZRIfLmJh",
-            "c2ljX2dycGNfc2VydmljZS5DaGF0UmVxdWVzdBodLmJhc2ljX2dycGNfc2Vy",
-            "dmljZS5DaGF0UmVwbHlCE6oCEEJhc2ljR3JwY1NlcnZpY2ViBnByb3RvMw=="));
+            "b29nbGUvcHJvdG9idWYvd3JhcHBlcnMucHJvdG8aHmdvb2dsZS9wcm90b2J1",
+            "Zi9kdXJhdGlvbi5wcm90bxofZ29vZ2xlL3Byb3RvYnVmL3RpbWVzdGFtcC5w",
+            "cm90bxoZZ29vZ2xlL3Byb3RvYnVmL2FueS5wcm90byKgAQoLQ2hhdFJlcXVl",
+            "c3QSKgoEbmFtZRgBIAEoCzIcLmdvb2dsZS5wcm90b2J1Zi5TdHJpbmdWYWx1",
+            "ZRItCgdtZXNzYWdlGAIgASgLMhwuZ29vZ2xlLnByb3RvYnVmLlN0cmluZ1Zh",
+            "bHVlEjYKEnJlcXVlc3Rfc3RhcnRfdGltZRgDIAEoCzIaLmdvb2dsZS5wcm90",
+            "b2J1Zi5UaW1lc3RhbXAilwQKCUNoYXRSZXBseRItCgdtZXNzYWdlGAEgASgL",
+            "MhwuZ29vZ2xlLnByb3RvYnVmLlN0cmluZ1ZhbHVlEjAKDGFuc3dlcl9mb3Vu",
+            "ZBgCIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5Cb29sVmFsdWUSMwoOcmVwbHlf",
+            "aW5fYnl0ZXMYAyABKAsyGy5nb29nbGUucHJvdG9idWYuQnl0ZXNWYWx1ZRI6",
+            "ChVtZXNzYWdlX3NpemVfaW5fYnl0ZXMYBCABKAsyGy5nb29nbGUucHJvdG9i",
+            "dWYuSW50MzJWYWx1ZRI/ChltZXNzYWdlX3NpemVfaW5fbWVnYWJ5dGVzGAUg",
+            "ASgLMhwuZ29vZ2xlLnByb3RvYnVmLkRvdWJsZVZhbHVlEjkKFXJlcXVlc3Rf",
+            "cmVjZWl2ZWRfdGltZRgGIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3Rh",
+            "bXASPQoacmVxdWVzdF9wcm9jZXNzZWRfZHVyYXRpb24YByABKAsyGS5nb29n",
+            "bGUucHJvdG9idWYuRHVyYXRpb24SMQoPZHluYW1pY19wYXlsb2FkGAggASgL",
+            "MhQuZ29vZ2xlLnByb3RvYnVmLkFueUICGAESGgoOcGFja2VkX251bWJlcnMY",
+            "CSADKAVCAhABEhsKDm9wdGlvbmFsX2ZpZWxkGAogASgFSACIAQFCEQoPX29w",
+            "dGlvbmFsX2ZpZWxkInoKEENoYXRIaXN0b3J5RW50cnkSFwoPcmVxdWVzdF9t",
+            "ZXNzYWdlGAEgASgJEhgKEHJlc3BvbnNlX21lc3NhZ2UYAiABKAkiMwoMUmVz",
+            "cG9uc2VUeXBlEgsKB1VOS05PV04QABIICgRIRUxQEAESDAoIR1JFRVRJTkcQ",
+            "AioxCgpBbnN3ZXJUeXBlEgsKB1VOS05PV04QABIICgRIRUxQEAESDAoIR1JF",
+            "RVRJTkcQAjJdCgdDaGF0Ym90ElIKDFNlbmRNZXNzYWdlcxIfLmJhc2ljX2dy",
+            "cGNfc2VydmljZS5DaGF0UmVxdWVzdBodLmJhc2ljX2dycGNfc2VydmljZS5D",
+            "aGF0UmVwbHkoATABQhOqAhBCYXNpY0dycGNTZXJ2aWNlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::BasicGrpcService.AnswerType), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::BasicGrpcService.ChatRequest), global::BasicGrpcService.ChatRequest.Parser, new[]{ "Name", "Message" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::BasicGrpcService.ChatReply), global::BasicGrpcService.ChatReply.Parser, new[]{ "Message", "AnswerFound", "ReplyInBytes", "MessageSizeInBytes", "MessageSizeInMegabytes" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::BasicGrpcService.ChatRequest), global::BasicGrpcService.ChatRequest.Parser, new[]{ "Name", "Message", "RequestStartTime" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::BasicGrpcService.ChatReply), global::BasicGrpcService.ChatReply.Parser, new[]{ "Message", "AnswerFound", "ReplyInBytes", "MessageSizeInBytes", "MessageSizeInMegabytes", "RequestReceivedTime", "RequestProcessedDuration", "DynamicPayload", "PackedNumbers", "OptionalField" }, new[]{ "OptionalField" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::BasicGrpcService.ChatHistoryEntry), global::BasicGrpcService.ChatHistoryEntry.Parser, new[]{ "RequestMessage", "ResponseMessage" }, null, new[]{ typeof(global::BasicGrpcService.ChatHistoryEntry.Types.ResponseType) }, null, null)
           }));
     }
@@ -98,6 +107,7 @@ namespace BasicGrpcService {
     public ChatRequest(ChatRequest other) : this() {
       Name = other.Name;
       Message = other.Message;
+      requestStartTime_ = other.requestStartTime_ != null ? other.requestStartTime_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -135,6 +145,18 @@ namespace BasicGrpcService {
     }
 
 
+    /// <summary>Field number for the "request_start_time" field.</summary>
+    public const int RequestStartTimeFieldNumber = 3;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp requestStartTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp RequestStartTime {
+      get { return requestStartTime_; }
+      set {
+        requestStartTime_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -152,6 +174,7 @@ namespace BasicGrpcService {
       }
       if (Name != other.Name) return false;
       if (Message != other.Message) return false;
+      if (!object.Equals(RequestStartTime, other.RequestStartTime)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -161,6 +184,7 @@ namespace BasicGrpcService {
       int hash = 1;
       if (name_ != null) hash ^= Name.GetHashCode();
       if (message_ != null) hash ^= Message.GetHashCode();
+      if (requestStartTime_ != null) hash ^= RequestStartTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -185,6 +209,10 @@ namespace BasicGrpcService {
       if (message_ != null) {
         _single_message_codec.WriteTagAndValue(output, Message);
       }
+      if (requestStartTime_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(RequestStartTime);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -201,6 +229,10 @@ namespace BasicGrpcService {
       if (message_ != null) {
         _single_message_codec.WriteTagAndValue(ref output, Message);
       }
+      if (requestStartTime_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(RequestStartTime);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -216,6 +248,9 @@ namespace BasicGrpcService {
       }
       if (message_ != null) {
         size += _single_message_codec.CalculateSizeWithTag(Message);
+      }
+      if (requestStartTime_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(RequestStartTime);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -238,6 +273,12 @@ namespace BasicGrpcService {
         if (message_ == null || other.Message != "") {
           Message = other.Message;
         }
+      }
+      if (other.requestStartTime_ != null) {
+        if (requestStartTime_ == null) {
+          RequestStartTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        RequestStartTime.MergeFrom(other.RequestStartTime);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -266,6 +307,13 @@ namespace BasicGrpcService {
             if (message_ == null || value != "") {
               Message = value;
             }
+            break;
+          }
+          case 26: {
+            if (requestStartTime_ == null) {
+              RequestStartTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(RequestStartTime);
             break;
           }
         }
@@ -297,6 +345,13 @@ namespace BasicGrpcService {
             }
             break;
           }
+          case 26: {
+            if (requestStartTime_ == null) {
+              RequestStartTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(RequestStartTime);
+            break;
+          }
         }
       }
     }
@@ -311,6 +366,7 @@ namespace BasicGrpcService {
   {
     private static readonly pb::MessageParser<ChatReply> _parser = new pb::MessageParser<ChatReply>(() => new ChatReply());
     private pb::UnknownFieldSet _unknownFields;
+    private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ChatReply> Parser { get { return _parser; } }
@@ -338,11 +394,17 @@ namespace BasicGrpcService {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ChatReply(ChatReply other) : this() {
+      _hasBits0 = other._hasBits0;
       Message = other.Message;
       AnswerFound = other.AnswerFound;
       ReplyInBytes = other.ReplyInBytes;
       MessageSizeInBytes = other.MessageSizeInBytes;
       MessageSizeInMegabytes = other.MessageSizeInMegabytes;
+      requestReceivedTime_ = other.requestReceivedTime_ != null ? other.requestReceivedTime_.Clone() : null;
+      requestProcessedDuration_ = other.requestProcessedDuration_ != null ? other.requestProcessedDuration_.Clone() : null;
+      dynamicPayload_ = other.dynamicPayload_ != null ? other.dynamicPayload_.Clone() : null;
+      packedNumbers_ = other.packedNumbers_.Clone();
+      optionalField_ = other.optionalField_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -422,6 +484,79 @@ namespace BasicGrpcService {
     }
 
 
+    /// <summary>Field number for the "request_received_time" field.</summary>
+    public const int RequestReceivedTimeFieldNumber = 6;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp requestReceivedTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp RequestReceivedTime {
+      get { return requestReceivedTime_; }
+      set {
+        requestReceivedTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "request_processed_duration" field.</summary>
+    public const int RequestProcessedDurationFieldNumber = 7;
+    private global::Google.Protobuf.WellKnownTypes.Duration requestProcessedDuration_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Duration RequestProcessedDuration {
+      get { return requestProcessedDuration_; }
+      set {
+        requestProcessedDuration_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "dynamic_payload" field.</summary>
+    public const int DynamicPayloadFieldNumber = 8;
+    private global::Google.Protobuf.WellKnownTypes.Any dynamicPayload_;
+    [global::System.ObsoleteAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Any DynamicPayload {
+      get { return dynamicPayload_; }
+      set {
+        dynamicPayload_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "packed_numbers" field.</summary>
+    public const int PackedNumbersFieldNumber = 9;
+    private static readonly pb::FieldCodec<int> _repeated_packedNumbers_codec
+        = pb::FieldCodec.ForInt32(74);
+    private readonly pbc::RepeatedField<int> packedNumbers_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<int> PackedNumbers {
+      get { return packedNumbers_; }
+    }
+
+    /// <summary>Field number for the "optional_field" field.</summary>
+    public const int OptionalFieldFieldNumber = 10;
+    private int optionalField_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int OptionalField {
+      get { if ((_hasBits0 & 1) != 0) { return optionalField_; } else { return 0; } }
+      set {
+        _hasBits0 |= 1;
+        optionalField_ = value;
+      }
+    }
+    /// <summary>Gets whether the "optional_field" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasOptionalField {
+      get { return (_hasBits0 & 1) != 0; }
+    }
+    /// <summary>Clears the value of the "optional_field" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearOptionalField() {
+      _hasBits0 &= ~1;
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -442,6 +577,11 @@ namespace BasicGrpcService {
       if (ReplyInBytes != other.ReplyInBytes) return false;
       if (MessageSizeInBytes != other.MessageSizeInBytes) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseNullableDoubleEqualityComparer.Equals(MessageSizeInMegabytes, other.MessageSizeInMegabytes)) return false;
+      if (!object.Equals(RequestReceivedTime, other.RequestReceivedTime)) return false;
+      if (!object.Equals(RequestProcessedDuration, other.RequestProcessedDuration)) return false;
+      if (!object.Equals(DynamicPayload, other.DynamicPayload)) return false;
+      if(!packedNumbers_.Equals(other.packedNumbers_)) return false;
+      if (OptionalField != other.OptionalField) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -454,6 +594,11 @@ namespace BasicGrpcService {
       if (replyInBytes_ != null) hash ^= ReplyInBytes.GetHashCode();
       if (messageSizeInBytes_ != null) hash ^= MessageSizeInBytes.GetHashCode();
       if (messageSizeInMegabytes_ != null) hash ^= pbc::ProtobufEqualityComparers.BitwiseNullableDoubleEqualityComparer.GetHashCode(MessageSizeInMegabytes);
+      if (requestReceivedTime_ != null) hash ^= RequestReceivedTime.GetHashCode();
+      if (requestProcessedDuration_ != null) hash ^= RequestProcessedDuration.GetHashCode();
+      if (dynamicPayload_ != null) hash ^= DynamicPayload.GetHashCode();
+      hash ^= packedNumbers_.GetHashCode();
+      if (HasOptionalField) hash ^= OptionalField.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -487,6 +632,23 @@ namespace BasicGrpcService {
       if (messageSizeInMegabytes_ != null) {
         _single_messageSizeInMegabytes_codec.WriteTagAndValue(output, MessageSizeInMegabytes);
       }
+      if (requestReceivedTime_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(RequestReceivedTime);
+      }
+      if (requestProcessedDuration_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(RequestProcessedDuration);
+      }
+      if (dynamicPayload_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(DynamicPayload);
+      }
+      packedNumbers_.WriteTo(output, _repeated_packedNumbers_codec);
+      if (HasOptionalField) {
+        output.WriteRawTag(80);
+        output.WriteInt32(OptionalField);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -512,6 +674,23 @@ namespace BasicGrpcService {
       if (messageSizeInMegabytes_ != null) {
         _single_messageSizeInMegabytes_codec.WriteTagAndValue(ref output, MessageSizeInMegabytes);
       }
+      if (requestReceivedTime_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(RequestReceivedTime);
+      }
+      if (requestProcessedDuration_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(RequestProcessedDuration);
+      }
+      if (dynamicPayload_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(DynamicPayload);
+      }
+      packedNumbers_.WriteTo(ref output, _repeated_packedNumbers_codec);
+      if (HasOptionalField) {
+        output.WriteRawTag(80);
+        output.WriteInt32(OptionalField);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -536,6 +715,19 @@ namespace BasicGrpcService {
       }
       if (messageSizeInMegabytes_ != null) {
         size += _single_messageSizeInMegabytes_codec.CalculateSizeWithTag(MessageSizeInMegabytes);
+      }
+      if (requestReceivedTime_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(RequestReceivedTime);
+      }
+      if (requestProcessedDuration_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(RequestProcessedDuration);
+      }
+      if (dynamicPayload_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DynamicPayload);
+      }
+      size += packedNumbers_.CalculateSize(_repeated_packedNumbers_codec);
+      if (HasOptionalField) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(OptionalField);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -573,6 +765,28 @@ namespace BasicGrpcService {
         if (messageSizeInMegabytes_ == null || other.MessageSizeInMegabytes != 0D) {
           MessageSizeInMegabytes = other.MessageSizeInMegabytes;
         }
+      }
+      if (other.requestReceivedTime_ != null) {
+        if (requestReceivedTime_ == null) {
+          RequestReceivedTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        RequestReceivedTime.MergeFrom(other.RequestReceivedTime);
+      }
+      if (other.requestProcessedDuration_ != null) {
+        if (requestProcessedDuration_ == null) {
+          RequestProcessedDuration = new global::Google.Protobuf.WellKnownTypes.Duration();
+        }
+        RequestProcessedDuration.MergeFrom(other.RequestProcessedDuration);
+      }
+      if (other.dynamicPayload_ != null) {
+        if (dynamicPayload_ == null) {
+          DynamicPayload = new global::Google.Protobuf.WellKnownTypes.Any();
+        }
+        DynamicPayload.MergeFrom(other.DynamicPayload);
+      }
+      packedNumbers_.Add(other.packedNumbers_);
+      if (other.HasOptionalField) {
+        OptionalField = other.OptionalField;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -624,6 +838,36 @@ namespace BasicGrpcService {
             }
             break;
           }
+          case 50: {
+            if (requestReceivedTime_ == null) {
+              RequestReceivedTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(RequestReceivedTime);
+            break;
+          }
+          case 58: {
+            if (requestProcessedDuration_ == null) {
+              RequestProcessedDuration = new global::Google.Protobuf.WellKnownTypes.Duration();
+            }
+            input.ReadMessage(RequestProcessedDuration);
+            break;
+          }
+          case 66: {
+            if (dynamicPayload_ == null) {
+              DynamicPayload = new global::Google.Protobuf.WellKnownTypes.Any();
+            }
+            input.ReadMessage(DynamicPayload);
+            break;
+          }
+          case 74:
+          case 72: {
+            packedNumbers_.AddEntriesFrom(input, _repeated_packedNumbers_codec);
+            break;
+          }
+          case 80: {
+            OptionalField = input.ReadInt32();
+            break;
+          }
         }
       }
     #endif
@@ -672,6 +916,36 @@ namespace BasicGrpcService {
             if (messageSizeInMegabytes_ == null || value != 0D) {
               MessageSizeInMegabytes = value;
             }
+            break;
+          }
+          case 50: {
+            if (requestReceivedTime_ == null) {
+              RequestReceivedTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(RequestReceivedTime);
+            break;
+          }
+          case 58: {
+            if (requestProcessedDuration_ == null) {
+              RequestProcessedDuration = new global::Google.Protobuf.WellKnownTypes.Duration();
+            }
+            input.ReadMessage(RequestProcessedDuration);
+            break;
+          }
+          case 66: {
+            if (dynamicPayload_ == null) {
+              DynamicPayload = new global::Google.Protobuf.WellKnownTypes.Any();
+            }
+            input.ReadMessage(DynamicPayload);
+            break;
+          }
+          case 74:
+          case 72: {
+            packedNumbers_.AddEntriesFrom(ref input, _repeated_packedNumbers_codec);
+            break;
+          }
+          case 80: {
+            OptionalField = input.ReadInt32();
             break;
           }
         }

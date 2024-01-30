@@ -1,3 +1,8 @@
 obj\Debug\net6.0\Protos/Chatbot.cs \
 obj\Debug\net6.0\Protos/ChatbotGrpc.cs: C:/Users/muhammad.anas/.nuget/packages/grpc.tools/2.40.0/build/native/include/google/protobuf/wrappers.proto\
+ C:/Users/muhammad.anas/.nuget/packages/grpc.tools/2.40.0/build/native/include/google/protobuf/duration.proto\
+ C:/Users/muhammad.anas/.nuget/packages/grpc.tools/2.40.0/build/native/include/google/protobuf/timestamp.proto\
+ C:/Users/muhammad.anas/.nuget/packages/grpc.tools/2.40.0/build/native/include/google/protobuf/any.proto\
+ Protos/response.proto\
+ C:/Users/muhammad.anas/.nuget/packages/grpc.tools/2.40.0/build/native/include/google/protobuf/field_mask.proto\
  Protos/chatbot.proto
